@@ -106,7 +106,7 @@
       background-size:46px 46px;
       mask-image:linear-gradient(to bottom, rgba(0,0,0,.9), transparent 78%);
       -webkit-mask-image:linear-gradient(to bottom, rgba(0,0,0,.9), transparent 78%);
-      transform: translateZ(0); /* Hardware acceleration */
+      transform: translateZ(0); 
     }
 
     .ambient-grid::after{
@@ -209,7 +209,6 @@
       background:rgba(8,13,22,.94);
     }
 
-    /* OPTIMIZED: Removed filter: hue-rotate and updated to background-position for massive performance gain */
     .nav-inner::before{
       content:"";
       position:absolute;
@@ -1008,15 +1007,6 @@
       overflow:hidden;
       transform: translateZ(0);
     }
-    .trust-strip::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:linear-gradient(90deg, transparent, rgba(244,217,143,.12), transparent);
-      animation:trustSweep 8s linear infinite;
-      will-change: transform;
-    }
-    @keyframes trustSweep{from{transform:translate3d(-100%, 0, 0)}to{transform:translate3d(100%, 0, 0)}}
     .trust-grid{
       position:relative;
       z-index:1;
@@ -1060,61 +1050,6 @@
         radial-gradient(circle at 12% 12%, rgba(217,170,72,.08), transparent 30%),
         radial-gradient(circle at 86% 24%, rgba(71,215,255,.07), transparent 32%);
       opacity:.82;
-    }
-    .section::after{
-      content:"";
-      position:absolute;
-      z-index:-1;
-      top:14%;
-      left:-22%;
-      right:-22%;
-      height:220px;
-      transform:rotate(-7deg);
-      background:
-        repeating-linear-gradient(90deg, transparent 0 38px, rgba(244,217,143,.11) 39px, transparent 41px),
-        linear-gradient(90deg, transparent, rgba(71,215,255,.08), transparent);
-      animation:sectionStream 13s linear infinite;
-      opacity:.58;
-      pointer-events:none;
-      will-change: background-position;
-    }
-    .section:nth-of-type(even)::after{
-      transform:rotate(7deg);
-      animation-direction:reverse;
-      opacity:.48;
-    }
-    @keyframes sectionStream{
-      from{background-position:0 0, 0 0}
-      to{background-position:360px 0, 260px 0}
-    }
-
-    .motion-lines{
-      position:absolute;
-      inset:0;
-      z-index:-1;
-      pointer-events:none;
-      overflow:hidden;
-      opacity:.58;
-      transform: translateZ(0);
-    }
-    .motion-lines span{
-      position:absolute;
-      height:1px;
-      width:42vw;
-      min-width:210px;
-      background:linear-gradient(90deg, transparent, rgba(244,217,143,.72), transparent);
-      filter:drop-shadow(0 0 10px rgba(244,217,143,.28));
-      transform:translate3d(-130%, 0, 0) rotate(-12deg);
-      animation:lineMove 8s linear infinite;
-      will-change: transform, opacity;
-    }
-    .motion-lines span:nth-child(1){top:18%;left:-8%;animation-delay:-1s}
-    .motion-lines span:nth-child(2){top:48%;right:-8%;animation-delay:-4s;animation-duration:10s}
-    .motion-lines span:nth-child(3){bottom:16%;left:6%;animation-delay:-6s;animation-duration:12s}
-    @keyframes lineMove{
-      from{transform:translate3d(-130%, 0, 0) rotate(-12deg);opacity:0}
-      12%,76%{opacity:1}
-      to{transform:translate3d(240%, 0, 0) rotate(-12deg);opacity:0}
     }
 
     .section-head{
@@ -1331,9 +1266,7 @@
       inset:-9px;
       border-radius:inherit;
       border:1px solid rgba(244,217,143,.25);
-      animation:dotPulse 2.4s ease-in-out infinite;
     }
-    @keyframes dotPulse{50%{transform:scale(1.35);opacity:.25}}
     .timeline-box{
       border:1px solid rgba(255,255,255,.1);
       background:linear-gradient(180deg, rgba(255,255,255,.055), rgba(255,255,255,.025));
@@ -1342,15 +1275,6 @@
       overflow:hidden;
       position:relative;
       transform: translateZ(0);
-    }
-    .timeline-box::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:linear-gradient(110deg, transparent, rgba(244,217,143,.12), transparent);
-      transform:translate3d(-110%, 0, 0);
-      animation:cardSweep 8.6s ease-in-out infinite;
-      will-change: transform;
     }
     .timeline-date{
       position:relative;
@@ -1513,16 +1437,6 @@
       overflow:hidden;
       transform: translateZ(0);
     }
-    .footer::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:linear-gradient(110deg, transparent, rgba(244,217,143,.08), transparent);
-      animation:footerSweep 12s linear infinite;
-      pointer-events:none;
-      will-change: transform;
-    }
-    @keyframes footerSweep{from{transform:translate3d(-100%, 0, 0)}to{transform:translate3d(100%, 0, 0)}}
     .footer-grid{
       position:relative;
       z-index:1;
@@ -1619,8 +1533,6 @@
       color:white;
       font-size:1.35rem
     }
-
-    .reveal { will-change: transform, opacity; }
 
     @media(max-width: 759px) {
       .grid-2, .grid-3, .grid-4, .hero-stats, .trust-grid {
@@ -1823,39 +1735,39 @@
     <section class="hero" id="hero">
       <div class="container hero-grid">
         <div class="hero-copy">
-          <div class="eyebrow reveal"><i class="fa-solid fa-circle-dot"></i> Pre-Launch Access Open</div>
-          <h1 class="hero-title reveal">Entertainment Rewards <span>In Your Pocket</span></h1>
-          <p class="hero-lead reveal">ROSELIYO is a premium app-style rewards platform where users can watch videos, listen to music, complete verified tasks, grow referrals, and unlock early access benefits.</p>
+          <div class="eyebrow"><i class="fa-solid fa-circle-dot"></i> Pre-Launch Access Open</div>
+          <h1 class="hero-title">Entertainment Rewards <span>In Your Pocket</span></h1>
+          <p class="hero-lead">ROSELIYO is a premium app-style rewards platform where users can watch videos, listen to music, complete verified tasks, grow referrals, and unlock early access benefits.</p>
 
-          <div class="hero-actions reveal">
+          <div class="hero-actions">
             <a href="#waitlist" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> Pre-Book Now</a>
             <a href="#benefits" class="btn btn-ghost"><i class="fa-regular fa-gem"></i> View Benefits</a>
           </div>
 
-          <p class="hero-note reveal"><i class="fa-solid fa-circle-check"></i> Early access begins May 18, 2026. Public launch is May 25, 2026.</p>
+          <p class="hero-note"><i class="fa-solid fa-circle-check"></i> Early access begins May 18, 2026. Public launch is May 25, 2026.</p>
 
-          <div class="countdown reveal" aria-label="Official launch countdown">
+          <div class="countdown" aria-label="Official launch countdown">
             <div class="time-card"><strong id="days">00</strong><span>Days</span></div>
             <div class="time-card"><strong id="hours">00</strong><span>Hours</span></div>
             <div class="time-card"><strong id="minutes">00</strong><span>Minutes</span></div>
             <div class="time-card"><strong id="seconds">00</strong><span>Seconds</span></div>
           </div>
 
-          <div class="hero-stats reveal">
+          <div class="hero-stats">
             <div class="stat-chip"><strong>5,000</strong><span>Early Slots</span></div>
             <div class="stat-chip"><strong>2X</strong><span>Multiplier</span></div>
             <div class="stat-chip"><strong>₹500+</strong><span>Launch Value</span></div>
             <div class="stat-chip"><strong>7</strong><span>Early Days</span></div>
           </div>
 
-          <div class="slot-card reveal">
+          <div class="slot-card">
             <div class="slot-row"><span>Limited Pre-Book Slots</span><strong>3,847 / 5,000 Filled</strong></div>
             <div class="slot-bar" aria-hidden="true"><span></span></div>
             <p class="slot-small">Only 1,153 early access slots remaining. Pre-booking closes May 20, 2026.</p>
           </div>
         </div>
 
-        <div class="app-showcase reveal" aria-label="ROSELIYO app preview">
+        <div class="app-showcase" aria-label="ROSELIYO app preview">
           <div class="phone-orbit" aria-hidden="true"></div>
 
           <div class="phone-shell" id="phoneShell">
@@ -1916,65 +1828,65 @@
 
     <div class="trust-strip">
       <div class="container trust-grid">
-        <div class="trust-item reveal"><strong>5,000</strong><span>Early Slots</span></div>
-        <div class="trust-item reveal"><strong>3-Level</strong><span>Referral System</span></div>
-        <div class="trust-item reveal"><strong>2X</strong><span>Reward Multiplier</span></div>
-        <div class="trust-item reveal"><strong>₹500+</strong><span>Launch Value</span></div>
+        <div class="trust-item"><strong>5,000</strong><span>Early Slots</span></div>
+        <div class="trust-item"><strong>3-Level</strong><span>Referral System</span></div>
+        <div class="trust-item"><strong>2X</strong><span>Reward Multiplier</span></div>
+        <div class="trust-item"><strong>₹500+</strong><span>Launch Value</span></div>
       </div>
     </div>
 
     <section class="section" id="about">
       <div class="container">
-        <div class="section-head reveal">
+        <div class="section-head">
           <div class="eyebrow"><i class="fa-solid fa-building-shield"></i> About ROSELIYO</div>
           <h2 class="section-title">Built Like A Real Digital Platform</h2>
           <p class="section-sub">A cleaner professional structure helps users understand what ROSELIYO does, why they should trust it, and how pre-booking benefits them.</p>
         </div>
         <div class="grid-3">
-          <article class="card reveal"><div class="icon"><i class="fa-solid fa-play"></i></div><h3>Entertainment Tasks</h3><p>Users can complete video, music, ad, and daily challenge tasks through a guided experience.</p></article>
-          <article class="card reveal"><div class="icon"><i class="fa-solid fa-wallet"></i></div><h3>Smart Wallet</h3><p>A wallet-style flow helps users understand coins, bonuses, task history, referrals, and withdrawals.</p></article>
-          <article class="card reveal"><div class="icon"><i class="fa-solid fa-sitemap"></i></div><h3>Referral Growth</h3><p>A 3-level referral system gives users a structured way to invite friends and unlock benefits.</p></article>
-          <article class="card reveal"><div class="icon"><i class="fa-solid fa-user-shield"></i></div><h3>Transparent Rules</h3><p>Reward dates and eligibility are explained clearly to create trust before launch.</p></article>
-          <article class="card reveal"><div class="icon"><i class="fa-solid fa-crown"></i></div><h3>VIP Layer</h3><p>VIP access, multipliers, and special tasks are presented as premium app benefits.</p></article>
-          <article class="card reveal"><div class="icon"><i class="fa-solid fa-headset"></i></div><h3>Support Ready</h3><p>Direct WhatsApp support and priority messaging make the platform feel responsive.</p></article>
+          <article class="card"><div class="icon"><i class="fa-solid fa-play"></i></div><h3>Entertainment Tasks</h3><p>Users can complete video, music, ad, and daily challenge tasks through a guided experience.</p></article>
+          <article class="card"><div class="icon"><i class="fa-solid fa-wallet"></i></div><h3>Smart Wallet</h3><p>A wallet-style flow helps users understand coins, bonuses, task history, referrals, and withdrawals.</p></article>
+          <article class="card"><div class="icon"><i class="fa-solid fa-sitemap"></i></div><h3>Referral Growth</h3><p>A 3-level referral system gives users a structured way to invite friends and unlock benefits.</p></article>
+          <article class="card"><div class="icon"><i class="fa-solid fa-user-shield"></i></div><h3>Transparent Rules</h3><p>Reward dates and eligibility are explained clearly to create trust before launch.</p></article>
+          <article class="card"><div class="icon"><i class="fa-solid fa-crown"></i></div><h3>VIP Layer</h3><p>VIP access, multipliers, and special tasks are presented as premium app benefits.</p></article>
+          <article class="card"><div class="icon"><i class="fa-solid fa-headset"></i></div><h3>Support Ready</h3><p>Direct WhatsApp support and priority messaging make the platform feel responsive.</p></article>
         </div>
       </div>
     </section>
 
     <section class="section" id="features">
       <div class="container">
-        <div class="section-head reveal">
+        <div class="section-head">
           <div class="eyebrow"><i class="fa-solid fa-layer-group"></i> Platform Features</div>
           <h2 class="section-title">User And Admin Capabilities</h2>
           <p class="section-sub">The layout separates user-facing benefits from admin-side control, making the website feel enterprise-ready.</p>
         </div>
 
-        <div class="tabs reveal" role="tablist">
+        <div class="tabs" role="tablist">
           <button class="tab-btn active" type="button" data-tab="user"><i class="fa-regular fa-user"></i> User Features</button>
           <button class="tab-btn" type="button" data-tab="admin"><i class="fa-solid fa-gears"></i> Admin Features</button>
         </div>
 
         <div class="tab-panel active" id="tab-user">
           <div class="grid-4">
-            <article class="card reveal"><div class="icon"><i class="fa-solid fa-mobile-screen"></i></div><h4>OTP Login</h4><p>Quick mobile login for smooth onboarding.</p></article>
-            <article class="card reveal"><div class="icon"><i class="fa-solid fa-wallet"></i></div><h4>Wallet</h4><p>Track coins, bonuses, and withdrawals.</p></article>
-            <article class="card reveal"><div class="icon"><i class="fa-solid fa-link"></i></div><h4>Referral System</h4><p>Invite users and monitor referral growth.</p></article>
-            <article class="card reveal"><div class="icon"><i class="fa-solid fa-bell"></i></div><h4>Notifications</h4><p>Receive updates for tasks and rewards.</p></article>
-            <article class="card reveal"><div class="icon"><i class="fa-brands fa-youtube"></i></div><h4>YouTube Tasks</h4><p>Watch video tasks and claim rewards.</p></article>
-            <article class="card reveal"><div class="icon"><i class="fa-brands fa-spotify"></i></div><h4>Spotify Tasks</h4><p>Complete music listening tasks.</p></article>
-            <article class="card reveal"><div class="icon"><i class="fa-solid fa-tv"></i></div><h4>Ad Rewards</h4><p>View short ads and collect coins.</p></article>
-            <article class="card reveal"><div class="icon"><i class="fa-solid fa-building-columns"></i></div><h4>Withdrawals</h4><p>Support for UPI and bank-style requests.</p></article>
+            <article class="card"><div class="icon"><i class="fa-solid fa-mobile-screen"></i></div><h4>OTP Login</h4><p>Quick mobile login for smooth onboarding.</p></article>
+            <article class="card"><div class="icon"><i class="fa-solid fa-wallet"></i></div><h4>Wallet</h4><p>Track coins, bonuses, and withdrawals.</p></article>
+            <article class="card"><div class="icon"><i class="fa-solid fa-link"></i></div><h4>Referral System</h4><p>Invite users and monitor referral growth.</p></article>
+            <article class="card"><div class="icon"><i class="fa-solid fa-bell"></i></div><h4>Notifications</h4><p>Receive updates for tasks and rewards.</p></article>
+            <article class="card"><div class="icon"><i class="fa-brands fa-youtube"></i></div><h4>YouTube Tasks</h4><p>Watch video tasks and claim rewards.</p></article>
+            <article class="card"><div class="icon"><i class="fa-brands fa-spotify"></i></div><h4>Spotify Tasks</h4><p>Complete music listening tasks.</p></article>
+            <article class="card"><div class="icon"><i class="fa-solid fa-tv"></i></div><h4>Ad Rewards</h4><p>View short ads and collect coins.</p></article>
+            <article class="card"><div class="icon"><i class="fa-solid fa-building-columns"></i></div><h4>Withdrawals</h4><p>Support for UPI and bank-style requests.</p></article>
           </div>
         </div>
 
         <div class="tab-panel" id="tab-admin">
           <div class="grid-3">
-            <article class="card reveal"><div class="icon"><i class="fa-solid fa-users-gear"></i></div><h4>User Management</h4><p>Manage users, status, verification, and access controls.</p></article>
-            <article class="card reveal"><div class="icon"><i class="fa-solid fa-clipboard-list"></i></div><h4>Task Management</h4><p>Create and manage video, music, ad, and challenge tasks.</p></article>
-            <article class="card reveal"><div class="icon"><i class="fa-solid fa-chart-line"></i></div><h4>Analytics</h4><p>Monitor growth, engagement, task completion, and referrals.</p></article>
-            <article class="card reveal"><div class="icon"><i class="fa-solid fa-money-check-dollar"></i></div><h4>Withdrawal Control</h4><p>Review payout requests and transaction activity.</p></article>
-            <article class="card reveal"><div class="icon"><i class="fa-solid fa-sitemap"></i></div><h4>Referral Monitoring</h4><p>Track referral trees and commission flow.</p></article>
-            <article class="card reveal"><div class="icon"><i class="fa-solid fa-tower-broadcast"></i></div><h4>Broadcasts</h4><p>Send announcements, task alerts, and launch updates.</p></article>
+            <article class="card"><div class="icon"><i class="fa-solid fa-users-gear"></i></div><h4>User Management</h4><p>Manage users, status, verification, and access controls.</p></article>
+            <article class="card"><div class="icon"><i class="fa-solid fa-clipboard-list"></i></div><h4>Task Management</h4><p>Create and manage video, music, ad, and challenge tasks.</p></article>
+            <article class="card"><div class="icon"><i class="fa-solid fa-chart-line"></i></div><h4>Analytics</h4><p>Monitor growth, engagement, task completion, and referrals.</p></article>
+            <article class="card"><div class="icon"><i class="fa-solid fa-money-check-dollar"></i></div><h4>Withdrawal Control</h4><p>Review payout requests and transaction activity.</p></article>
+            <article class="card"><div class="icon"><i class="fa-solid fa-sitemap"></i></div><h4>Referral Monitoring</h4><p>Track referral trees and commission flow.</p></article>
+            <article class="card"><div class="icon"><i class="fa-solid fa-tower-broadcast"></i></div><h4>Broadcasts</h4><p>Send announcements, task alerts, and launch updates.</p></article>
           </div>
         </div>
       </div>
@@ -1982,78 +1894,78 @@
 
     <section class="section" id="process">
       <div class="container">
-        <div class="section-head reveal">
+        <div class="section-head">
           <div class="eyebrow"><i class="fa-solid fa-route"></i> Process</div>
           <h2 class="section-title">Simple User Journey</h2>
           <p class="section-sub">A professional website should show the process quickly. This helps users trust the platform before they register.</p>
         </div>
 
         <div class="grid-4">
-          <article class="card step-card reveal"><div class="step-number">1</div><h4>Pre-Book</h4><p>Reserve early access and confirm details through WhatsApp.</p></article>
-          <article class="card step-card reveal"><div class="step-number">2</div><h4>Register</h4><p>Use mobile OTP to create a secure user account.</p></article>
-          <article class="card step-card reveal"><div class="step-number">3</div><h4>Complete Tasks</h4><p>Watch, listen, view ads, and complete daily challenges.</p></article>
-          <article class="card step-card reveal"><div class="step-number">4</div><h4>Track & Withdraw</h4><p>Monitor wallet activity and request withdrawal when eligible.</p></article>
+          <article class="card step-card"><div class="step-number">1</div><h4>Pre-Book</h4><p>Reserve early access and confirm details through WhatsApp.</p></article>
+          <article class="card step-card"><div class="step-number">2</div><h4>Register</h4><p>Use mobile OTP to create a secure user account.</p></article>
+          <article class="card step-card"><div class="step-number">3</div><h4>Complete Tasks</h4><p>Watch, listen, view ads, and complete daily challenges.</p></article>
+          <article class="card step-card"><div class="step-number">4</div><h4>Track & Withdraw</h4><p>Monitor wallet activity and request withdrawal when eligible.</p></article>
         </div>
       </div>
     </section>
 
     <section class="section" id="earn">
       <div class="container">
-        <div class="section-head reveal">
+        <div class="section-head">
           <div class="eyebrow"><i class="fa-solid fa-coins"></i> Earning Methods</div>
           <h2 class="section-title">Multiple Reward Channels</h2>
           <p class="section-sub">The earning section is clearer, less flashy, and easier for users to understand at first glance.</p>
         </div>
 
         <div class="grid-4">
-          <article class="card reveal"><div class="icon"><i class="fa-brands fa-youtube"></i></div><h4>YouTube Tasks</h4><p>Watch sponsored video tasks for 2 to 5 minutes and complete task rules.</p></article>
-          <article class="card reveal"><div class="icon"><i class="fa-brands fa-spotify"></i></div><h4>Spotify Tasks</h4><p>Listen to songs and complete music-based engagement tasks.</p></article>
-          <article class="card reveal"><div class="icon"><i class="fa-solid fa-tv"></i></div><h4>Advertisement Tasks</h4><p>View short ads from 15 to 60 seconds and claim rewards.</p></article>
-          <article class="card reveal"><div class="icon"><i class="fa-solid fa-trophy"></i></div><h4>Daily Challenges</h4><p>Complete streaks and daily missions to unlock bonus opportunities.</p></article>
+          <article class="card"><div class="icon"><i class="fa-brands fa-youtube"></i></div><h4>YouTube Tasks</h4><p>Watch sponsored video tasks for 2 to 5 minutes and complete task rules.</p></article>
+          <article class="card"><div class="icon"><i class="fa-brands fa-spotify"></i></div><h4>Spotify Tasks</h4><p>Listen to songs and complete music-based engagement tasks.</p></article>
+          <article class="card"><div class="icon"><i class="fa-solid fa-tv"></i></div><h4>Advertisement Tasks</h4><p>View short ads from 15 to 60 seconds and claim rewards.</p></article>
+          <article class="card"><div class="icon"><i class="fa-solid fa-trophy"></i></div><h4>Daily Challenges</h4><p>Complete streaks and daily missions to unlock bonus opportunities.</p></article>
         </div>
       </div>
     </section>
 
     <section class="section" id="benefits">
       <div class="container">
-        <div class="section-head reveal">
+        <div class="section-head">
           <div class="eyebrow"><i class="fa-solid fa-gift"></i> Pre-Book Benefits</div>
           <h2 class="section-title">Early Access Rewards</h2>
           <p class="section-sub">These benefit cards look like app reward blocks instead of a casual promo layout.</p>
         </div>
 
         <div class="grid-3">
-          <article class="card benefit-card reveal"><span class="tag">Exclusive</span><div class="benefit-value">500</div><h4>Bonus Coins</h4><p>Launch-day starter bonus for confirmed pre-bookers.</p></article>
-          <article class="card benefit-card reveal"><span class="tag">30 Days</span><div class="benefit-value">2X</div><h4>Reward Multiplier</h4><p>Double reward multiplier access during the first 30 days.</p></article>
-          <article class="card benefit-card reveal"><span class="tag">Early</span><div class="benefit-value">7</div><h4>Early Access Days</h4><p>Use the app from May 18, 2026 before public launch.</p></article>
-          <article class="card benefit-card reveal"><span class="tag">Free</span><div class="benefit-value">VIP</div><h4>Premium Pass</h4><p>One free VIP pass for premium task access.</p></article>
-          <article class="card benefit-card reveal"><span class="tag">Lifetime</span><div class="benefit-value">+10%</div><h4>Referral Boost</h4><p>Permanent referral bonus increase for early supporters.</p></article>
-          <article class="card benefit-card reveal"><span class="tag">Priority</span><div class="benefit-value">24/7</div><h4>Support Access</h4><p>Priority support access for pre-booked users.</p></article>
+          <article class="card benefit-card"><span class="tag">Exclusive</span><div class="benefit-value">500</div><h4>Bonus Coins</h4><p>Launch-day starter bonus for confirmed pre-bookers.</p></article>
+          <article class="card benefit-card"><span class="tag">30 Days</span><div class="benefit-value">2X</div><h4>Reward Multiplier</h4><p>Double reward multiplier access during the first 30 days.</p></article>
+          <article class="card benefit-card"><span class="tag">Early</span><div class="benefit-value">7</div><h4>Early Access Days</h4><p>Use the app from May 18, 2026 before public launch.</p></article>
+          <article class="card benefit-card"><span class="tag">Free</span><div class="benefit-value">VIP</div><h4>Premium Pass</h4><p>One free VIP pass for premium task access.</p></article>
+          <article class="card benefit-card"><span class="tag">Lifetime</span><div class="benefit-value">+10%</div><h4>Referral Boost</h4><p>Permanent referral bonus increase for early supporters.</p></article>
+          <article class="card benefit-card"><span class="tag">Priority</span><div class="benefit-value">24/7</div><h4>Support Access</h4><p>Priority support access for pre-booked users.</p></article>
         </div>
       </div>
     </section>
 
     <section class="section" id="roadmap">
       <div class="container">
-        <div class="section-head reveal">
+        <div class="section-head">
           <div class="eyebrow"><i class="fa-solid fa-calendar-days"></i> Launch Timeline</div>
           <h2 class="section-title">ROSELIYO Launch Schedule</h2>
           <p class="section-sub">Clear dates reduce confusion and make the launch feel organized.</p>
         </div>
 
         <div class="timeline">
-          <div class="timeline-item reveal"><div class="timeline-dot"></div><div class="timeline-box"><div class="timeline-date">May 9, 2026</div><div class="timeline-title">Pre-Booking Phase</div><div class="timeline-desc">Pre-booking opens with limited early access slots and launch benefits.</div></div></div>
-          <div class="timeline-item reveal"><div class="timeline-dot"></div><div class="timeline-box"><div class="timeline-date">May 18, 2026</div><div class="timeline-title">Early Access Begins</div><div class="timeline-desc">Confirmed users receive access, bonus coins, and multiplier activation.</div></div></div>
-          <div class="timeline-item reveal"><div class="timeline-dot"></div><div class="timeline-box"><div class="timeline-date">May 20, 2026</div><div class="timeline-title">Pre-Booking Closes</div><div class="timeline-desc">Final day to secure pre-book bonuses before the public launch countdown.</div></div></div>
-          <div class="timeline-item reveal"><div class="timeline-dot"></div><div class="timeline-box"><div class="timeline-date">May 25, 2026</div><div class="timeline-title">Official Public Launch</div><div class="timeline-desc">ROSELIYO launches publicly for all users across India.</div></div></div>
-          <div class="timeline-item reveal"><div class="timeline-dot"></div><div class="timeline-box"><div class="timeline-date">May 25 Onwards</div><div class="timeline-title">Continuous Updates</div><div class="timeline-desc">New tasks, improvements, support updates, and growth features roll out regularly.</div></div></div>
+          <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-box"><div class="timeline-date">May 9, 2026</div><div class="timeline-title">Pre-Booking Phase</div><div class="timeline-desc">Pre-booking opens with limited early access slots and launch benefits.</div></div></div>
+          <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-box"><div class="timeline-date">May 18, 2026</div><div class="timeline-title">Early Access Begins</div><div class="timeline-desc">Confirmed users receive access, bonus coins, and multiplier activation.</div></div></div>
+          <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-box"><div class="timeline-date">May 20, 2026</div><div class="timeline-title">Pre-Booking Closes</div><div class="timeline-desc">Final day to secure pre-book bonuses before the public launch countdown.</div></div></div>
+          <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-box"><div class="timeline-date">May 25, 2026</div><div class="timeline-title">Official Public Launch</div><div class="timeline-desc">ROSELIYO launches publicly for all users across India.</div></div></div>
+          <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-box"><div class="timeline-date">May 25 Onwards</div><div class="timeline-title">Continuous Updates</div><div class="timeline-desc">New tasks, improvements, support updates, and growth features roll out regularly.</div></div></div>
         </div>
       </div>
     </section>
 
     <section class="section" id="waitlist">
       <div class="container form-layout">
-        <div class="card contact-card reveal">
+        <div class="card contact-card">
           <img class="big-logo" src="https://www.roseliyo.com/logo.jpeg" alt="ROSELIYO logo" onerror="this.style.display='none'" />
           <h3>Pre-Book Your Early Access</h3>
           <p>Submit your details and the website will open WhatsApp with a ready-made confirmation message. No data is stored inside this static page.</p>
@@ -2065,7 +1977,7 @@
           </div>
         </div>
 
-        <div class="card reveal">
+        <div class="card">
           <form class="form" id="prebookForm">
             <div class="field"><label for="name">Full Name *</label><input id="name" name="name" type="text" placeholder="Your full name" required minlength="2" /></div>
             <div class="field"><label for="email">Email Address *</label><input id="email" name="email" type="email" placeholder="yourmail@example.com" required /></div>
@@ -2098,30 +2010,30 @@
 
     <section class="section" id="faq">
       <div class="container">
-        <div class="section-head reveal">
+        <div class="section-head">
           <div class="eyebrow"><i class="fa-regular fa-circle-question"></i> FAQ</div>
           <h2 class="section-title">Pre-Launch Questions</h2>
           <p class="section-sub">Professional FAQ formatting makes the page feel safer and more complete.</p>
         </div>
 
         <div class="faq">
-          <article class="faq-item reveal open">
+          <article class="faq-item open">
             <div class="faq-q"><span>When does ROSELIYO officially launch?</span><i class="fa-solid fa-plus"></i></div>
             <div class="faq-a"><p>ROSELIYO officially launches on <strong>May 25, 2026</strong>. Pre-bookers get early access from <strong>May 18, 2026</strong>.</p></div>
           </article>
-          <article class="faq-item reveal">
+          <article class="faq-item">
             <div class="faq-q"><span>Is pre-booking free or paid?</span><i class="fa-solid fa-plus"></i></div>
             <div class="faq-a"><p>Pre-booking is free. Premium features can be optional add-ons after launch.</p></div>
           </article>
-          <article class="faq-item reveal">
+          <article class="faq-item">
             <div class="faq-q"><span>What benefits do pre-bookers get?</span><i class="fa-solid fa-plus"></i></div>
             <div class="faq-a"><p>Pre-bookers can unlock bonus coins, 2X rewards for 30 days, early access, one VIP pass, referral boost, and priority support.</p></div>
           </article>
-          <article class="faq-item reveal">
+          <article class="faq-item">
             <div class="faq-q"><span>How do I confirm my pre-booking?</span><i class="fa-solid fa-plus"></i></div>
             <div class="faq-a"><p>Submit the form. It opens WhatsApp with your details. Send that message to confirm your early access.</p></div>
           </article>
-          <article class="faq-item reveal">
+          <article class="faq-item">
             <div class="faq-q"><span>Is my data stored on this website?</span><i class="fa-solid fa-plus"></i></div>
             <div class="faq-a"><p>No. This static page only prepares a WhatsApp message using your entered details. It does not save your form data.</p></div>
           </article>
@@ -2160,7 +2072,6 @@
   </div>
 
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
   <script>
     const $ = (selector, parent = document) => parent.querySelector(selector);
@@ -2179,7 +2090,6 @@
       backTop?.classList.toggle('show', window.scrollY > 460);
     }
 
-    // Performance Update: Throttled scroll listener
     let isScrolling = false;
     window.addEventListener('scroll', () => {
       if (!isScrolling) {
@@ -2230,8 +2140,6 @@
             { opacity:1, y:0, scale:1, duration:.55, stagger:.06, ease:'power2.out' }
           );
         }
-        
-        if(window.ScrollTrigger) ScrollTrigger.refresh();
       });
     });
 
@@ -2240,7 +2148,6 @@
         const wasOpen = item.classList.contains('open');
         $$('.faq-item').forEach(faq => faq.classList.remove('open'));
         if(!wasOpen) item.classList.add('open');
-        setTimeout(() => { if(window.ScrollTrigger) ScrollTrigger.refresh(); }, 300);
       });
     });
     
@@ -2251,21 +2158,9 @@
              if(c !== card) c.classList.remove('expanded');
           });
           card.classList.toggle('expanded');
-          setTimeout(() => { if(window.ScrollTrigger) ScrollTrigger.refresh(); }, 350);
         }
       });
     });
-
-    function addMotionLines(){
-      $$('.hero, .section').forEach(section => {
-        if(section.querySelector('.motion-lines')) return;
-        const layer = document.createElement('div');
-        layer.className = 'motion-lines';
-        layer.setAttribute('aria-hidden', 'true');
-        layer.innerHTML = '<span></span><span></span><span></span>';
-        section.prepend(layer);
-      });
-    }
 
     function updateActiveNav(){
       const sections = ['hero','about','features','process','earn','waitlist','faq'];
@@ -2290,38 +2185,7 @@
       const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       if(reduceMotion) return;
 
-      if(window.gsap && window.ScrollTrigger){
-        gsap.registerPlugin(ScrollTrigger);
-
-        gsap.set('.reveal', { opacity:0, y:28 });
-        
-        gsap.to('.hero .reveal', {
-          opacity:1,
-          y:0,
-          duration:.82,
-          stagger:.12,
-          ease:'power3.out',
-          delay:.15
-        });
-
-        $$('.section, .trust-strip').forEach(section => {
-          const items = section.querySelectorAll('.reveal');
-          if(!items.length) return;
-
-          gsap.to(items, {
-            opacity:1,
-            y:0,
-            duration:.72,
-            stagger:.08,
-            ease:'power3.out',
-            scrollTrigger:{
-              trigger:section,
-              start:'top 85%',
-              once:true
-            }
-          });
-        });
-
+      if(window.gsap){
         gsap.to('.phone-shell', {
           y:-16,
           duration:2.8,
@@ -2347,48 +2211,6 @@
           yoyo:true,
           ease:'sine.inOut'
         });
-
-        // Performance Update: Replaced hundreds of simultaneous tweens with fast quickTo setters.
-        gsap.utils.toArray('.card').forEach(card => {
-          const xTo = gsap.quickTo(card, "rotateY", {duration: 0.35, ease: "power2.out"});
-          const yTo = gsap.quickTo(card, "rotateX", {duration: 0.35, ease: "power2.out"});
-          
-          card.addEventListener('mousemove', event => {
-            if(window.innerWidth < 760) return; 
-            const rect = card.getBoundingClientRect();
-            const x = (event.clientX - rect.left) / rect.width - .5;
-            const y = (event.clientY - rect.top) / rect.height - .5;
-            xTo(x * 5);
-            yTo(-y * 5);
-          });
-          card.addEventListener('mouseleave', () => {
-            if(window.innerWidth < 760) return;
-            xTo(0);
-            yTo(0);
-          });
-        });
-
-        ScrollTrigger.create({
-          trigger:'#hero',
-          start:'top top',
-          end:'bottom top',
-          scrub:true,
-          onUpdate:self => {
-            gsap.to('.phone-orbit', { rotate:self.progress * 90, duration:.2, overwrite:true });
-          }
-        });
-      } else {
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if(entry.isIntersecting){
-              entry.target.style.opacity = 1;
-              entry.target.style.transform = 'translateY(0)';
-              observer.unobserve(entry.target);
-            }
-          });
-        }, { threshold:.1, rootMargin:'0px 0px -30px 0px' });
-
-        $$('.reveal').forEach(item => observer.observe(item));
       }
     }
 
@@ -2411,18 +2233,14 @@
       form.style.display = 'none';
       success?.classList.add('show');
 
-      setTimeout(() => { if(window.ScrollTrigger) ScrollTrigger.refresh(); }, 100);
-
       setTimeout(() => {
         form.reset();
         success?.classList.remove('show');
         form.style.display = 'grid';
-        setTimeout(() => { if(window.ScrollTrigger) ScrollTrigger.refresh(); }, 100);
       }, 7000);
     });
 
     window.addEventListener('DOMContentLoaded', () => {
-      addMotionLines();
       initAnimations();
     });
   </script>
