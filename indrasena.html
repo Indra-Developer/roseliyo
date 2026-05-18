@@ -69,7 +69,7 @@
     }
 
     *{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth;} /* Fix: Removed overflow-x:hidden from html to fix ScrollTrigger visibility bugs */
+    html{scroll-behavior:smooth;} 
     body{
       min-height:100vh;
       font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
@@ -106,6 +106,7 @@
       background-size:46px 46px;
       mask-image:linear-gradient(to bottom, rgba(0,0,0,.9), transparent 78%);
       -webkit-mask-image:linear-gradient(to bottom, rgba(0,0,0,.9), transparent 78%);
+      transform: translateZ(0); /* Hardware acceleration */
     }
 
     .ambient-grid::after{
@@ -116,6 +117,7 @@
         linear-gradient(110deg, transparent 0 44%, rgba(217,170,72,.12) 48%, transparent 53%),
         linear-gradient(70deg, transparent 0 64%, rgba(71,215,255,.08) 66%, transparent 70%);
       animation:globalSweep 13s linear infinite;
+      will-change: transform;
     }
 
     @keyframes globalSweep{
@@ -131,6 +133,7 @@
       place-items:center;
       background:#05070c;
       transition:opacity .45s ease, visibility .45s ease;
+      transform: translateZ(0);
     }
     .loader.hide{opacity:0;visibility:hidden;pointer-events:none}
     .loader-card{text-align:center}
@@ -156,7 +159,8 @@
       background:rgba(255,255,255,.08);
       border-radius:999px;
       overflow:hidden;
-      margin:18px auto 0
+      margin:18px auto 0;
+      transform: translateZ(0);
     }
     .loader-bar span{
       display:block;
@@ -164,9 +168,10 @@
       width:42%;
       border-radius:999px;
       background:linear-gradient(90deg, transparent, var(--gold-2), transparent);
-      animation:load 1.25s ease-in-out infinite
+      animation:load 1.25s ease-in-out infinite;
+      will-change: transform;
     }
-    @keyframes load{from{transform:translateX(-120%)}to{transform:translateX(250%)}}
+    @keyframes load{from{transform:translate3d(-120%, 0, 0)}to{transform:translate3d(250%, 0, 0)}}
 
     .desktop-nav{
       display:none;
@@ -174,6 +179,7 @@
       inset:18px 0 auto;
       z-index:1000;
       pointer-events:none;
+      transform: translateZ(0);
     }
 
     .nav-inner{
@@ -189,10 +195,12 @@
       border-radius:26px;
       background:linear-gradient(180deg, rgba(12,19,32,.84), rgba(8,13,22,.72));
       backdrop-filter:blur(20px);
+      -webkit-backdrop-filter:blur(20px);
       box-shadow:0 22px 80px rgba(0,0,0,.32);
       pointer-events:auto;
       overflow:hidden;
       transition:.25s ease;
+      transform: translateZ(0);
     }
 
     .desktop-nav.scrolled .nav-inner{
@@ -201,6 +209,7 @@
       background:rgba(8,13,22,.94);
     }
 
+    /* OPTIMIZED: Removed filter: hue-rotate and updated to background-position for massive performance gain */
     .nav-inner::before{
       content:"";
       position:absolute;
@@ -208,6 +217,7 @@
       border-radius:inherit;
       padding:1px;
       background:linear-gradient(110deg, transparent, rgba(244,217,143,.72), transparent 42%, rgba(71,215,255,.26), transparent);
+      background-size: 200% 100%;
       -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
       -webkit-mask-composite:xor;
       mask-composite:exclude;
@@ -216,8 +226,8 @@
     }
 
     @keyframes borderFlow{
-      from{filter:hue-rotate(0deg);transform:translateX(-18%)}
-      to{filter:hue-rotate(20deg);transform:translateX(18%)}
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
     }
 
     .brand{
@@ -316,6 +326,7 @@
       box-shadow:0 18px 44px rgba(217,170,72,.2);
       position:relative;
       overflow:hidden;
+      transform: translateZ(0);
     }
     .btn-primary::after{
       content:"";
@@ -325,6 +336,7 @@
       transform:skewX(-18deg);
       background:linear-gradient(90deg, transparent, rgba(255,255,255,.45), transparent);
       animation:buttonShine 3.8s ease-in-out infinite;
+      will-change: left;
     }
     @keyframes buttonShine{0%,42%{left:-45%}70%,100%{left:120%}}
     .btn-primary:hover{transform:translateY(-2px);box-shadow:0 24px 60px rgba(217,170,72,.28)}
@@ -355,7 +367,9 @@
       border-radius:22px;
       background:rgba(7,12,22,.74);
       backdrop-filter:blur(18px);
+      -webkit-backdrop-filter:blur(18px);
       box-shadow:0 18px 50px rgba(0,0,0,.28);
+      transform: translateZ(0);
     }
 
     .mobile-topbar .brand img{width:40px;height:40px;border-radius:15px}
@@ -391,7 +405,9 @@
       border-radius:28px;
       background:rgba(7,12,22,.88);
       backdrop-filter:blur(22px);
+      -webkit-backdrop-filter:blur(22px);
       box-shadow:0 20px 70px rgba(0,0,0,.42);
+      transform: translateZ(0);
     }
 
     .mobile-bottom-nav a{
@@ -455,6 +471,7 @@
       filter:blur(.2px);
       opacity:.72;
       animation:heroLines 12s linear infinite;
+      will-change: background-position;
     }
 
     @keyframes heroLines{
@@ -539,14 +556,16 @@
       border-radius:18px;
       background:rgba(255,255,255,.045);
       box-shadow:inset 0 1px 0 rgba(255,255,255,.06);
+      transform: translateZ(0);
     }
     .stat-chip::after{
       content:"";
       position:absolute;
       inset:0;
       background:linear-gradient(110deg, transparent, rgba(244,217,143,.13), transparent);
-      transform:translateX(-110%);
+      transform:translate3d(-110%, 0, 0);
       animation:cardSweep 6s ease-in-out infinite;
+      will-change: transform;
     }
     .stat-chip strong{
       display:block;
@@ -587,6 +606,7 @@
         conic-gradient(from 0deg, transparent, rgba(244,217,143,.18), transparent, rgba(71,215,255,.12), transparent);
       animation:orbitSpin 18s linear infinite;
       opacity:.9;
+      will-change: transform;
     }
 
     .phone-orbit::before,
@@ -597,6 +617,7 @@
       border-radius:inherit;
       border:1px dashed rgba(244,217,143,.18);
       animation:orbitSpin 24s linear infinite reverse;
+      will-change: transform;
     }
     .phone-orbit::after{
       inset:22%;
@@ -701,6 +722,7 @@
         rgba(255,255,255,.04);
       box-shadow:0 22px 45px rgba(0,0,0,.25);
       overflow:hidden;
+      transform: translateZ(0);
     }
     .wallet-card::after{
       content:"";
@@ -710,6 +732,7 @@
       transform:skewX(-18deg);
       background:linear-gradient(90deg, transparent, rgba(255,255,255,.28), transparent);
       animation:walletShine 5.4s ease-in-out infinite;
+      will-change: left;
     }
     @keyframes walletShine{0%,45%{left:-38%}76%,100%{left:130%}}
     .wallet-label{
@@ -843,7 +866,9 @@
       border:1px solid rgba(244,217,143,.24);
       background:rgba(12,19,32,.78);
       backdrop-filter:blur(16px);
+      -webkit-backdrop-filter:blur(16px);
       box-shadow:0 22px 60px rgba(0,0,0,.28);
+      will-change: transform;
     }
     .float-card b{
       display:block;
@@ -876,14 +901,16 @@
       box-shadow:inset 0 1px 0 rgba(255,255,255,.05);
       text-align:center;
       overflow:hidden;
+      transform: translateZ(0);
     }
     .time-card::after{
       content:"";
       position:absolute;
       inset:0;
       background:linear-gradient(110deg, transparent, rgba(244,217,143,.12), transparent);
-      transform:translateX(-115%);
+      transform:translate3d(-115%, 0, 0);
       animation:cardSweep 7.4s ease-in-out infinite;
+      will-change: transform;
     }
     .time-card strong{
       display:block;
@@ -907,8 +934,8 @@
     }
 
     @keyframes cardSweep{
-      0%,55%{transform:translateX(-115%)}
-      85%,100%{transform:translateX(115%)}
+      0%,55%{transform:translate3d(-115%, 0, 0)}
+      85%,100%{transform:translate3d(115%, 0, 0)}
     }
 
     .slot-card{
@@ -920,6 +947,7 @@
       border-radius:20px;
       position:relative;
       overflow:hidden;
+      transform: translateZ(0);
     }
     .slot-card::before{
       content:"";
@@ -929,8 +957,9 @@
       background:linear-gradient(100deg, transparent, rgba(244,217,143,.22), transparent);
       animation:slotGlow 5.5s linear infinite;
       opacity:.8;
+      will-change: transform;
     }
-    @keyframes slotGlow{from{transform:translateX(-100%)}to{transform:translateX(100%)}}
+    @keyframes slotGlow{from{transform:translate3d(-100%, 0, 0)}to{transform:translate3d(100%, 0, 0)}}
     .slot-row{
       display:grid;
       gap:5px;
@@ -951,6 +980,7 @@
       margin-top:12px;
       position:relative;
       z-index:1;
+      transform: translateZ(0);
     }
     .slot-bar span{
       display:block;
@@ -959,6 +989,7 @@
       border-radius:inherit;
       background:linear-gradient(90deg, var(--gold-3), var(--gold), var(--gold-2));
       animation:barPulse 2.7s ease-in-out infinite;
+      will-change: filter;
     }
     @keyframes barPulse{50%{filter:brightness(1.28)}}
     .slot-small{
@@ -975,6 +1006,7 @@
       border-block:1px solid var(--line-2);
       background:rgba(255,255,255,.025);
       overflow:hidden;
+      transform: translateZ(0);
     }
     .trust-strip::before{
       content:"";
@@ -982,8 +1014,9 @@
       inset:0;
       background:linear-gradient(90deg, transparent, rgba(244,217,143,.12), transparent);
       animation:trustSweep 8s linear infinite;
+      will-change: transform;
     }
-    @keyframes trustSweep{from{transform:translateX(-100%)}to{transform:translateX(100%)}}
+    @keyframes trustSweep{from{transform:translate3d(-100%, 0, 0)}to{transform:translate3d(100%, 0, 0)}}
     .trust-grid{
       position:relative;
       z-index:1;
@@ -1043,6 +1076,7 @@
       animation:sectionStream 13s linear infinite;
       opacity:.58;
       pointer-events:none;
+      will-change: background-position;
     }
     .section:nth-of-type(even)::after{
       transform:rotate(7deg);
@@ -1061,6 +1095,7 @@
       pointer-events:none;
       overflow:hidden;
       opacity:.58;
+      transform: translateZ(0);
     }
     .motion-lines span{
       position:absolute;
@@ -1069,16 +1104,17 @@
       min-width:210px;
       background:linear-gradient(90deg, transparent, rgba(244,217,143,.72), transparent);
       filter:drop-shadow(0 0 10px rgba(244,217,143,.28));
-      transform:translateX(-130%) rotate(-12deg);
+      transform:translate3d(-130%, 0, 0) rotate(-12deg);
       animation:lineMove 8s linear infinite;
+      will-change: transform, opacity;
     }
     .motion-lines span:nth-child(1){top:18%;left:-8%;animation-delay:-1s}
     .motion-lines span:nth-child(2){top:48%;right:-8%;animation-delay:-4s;animation-duration:10s}
     .motion-lines span:nth-child(3){bottom:16%;left:6%;animation-delay:-6s;animation-duration:12s}
     @keyframes lineMove{
-      from{transform:translateX(-130%) rotate(-12deg);opacity:0}
+      from{transform:translate3d(-130%, 0, 0) rotate(-12deg);opacity:0}
       12%,76%{opacity:1}
-      to{transform:translateX(240%) rotate(-12deg);opacity:0}
+      to{transform:translate3d(240%, 0, 0) rotate(-12deg);opacity:0}
     }
 
     .section-head{
@@ -1126,7 +1162,7 @@
       box-shadow:0 18px 46px rgba(0,0,0,.16);
       overflow:hidden;
       transform:translateZ(0);
-      cursor:default; /* Updated in media query */
+      cursor:default; 
     }
     .card::before{
       content:"";
@@ -1143,16 +1179,17 @@
       background:
         linear-gradient(110deg, transparent, rgba(244,217,143,.095), transparent),
         radial-gradient(circle at 50% 0%, rgba(244,217,143,.075), transparent 45%);
-      transform:translateX(-115%);
+      transform:translate3d(-115%, 0, 0);
       transition:.45s ease;
       pointer-events:none;
+      will-change: transform;
     }
     .card:hover{
       border-color:var(--line);
       transform:translateY(-3px);
       transition:.22s ease;
     }
-    .card:hover::after{transform:translateX(0)}
+    .card:hover::after{transform:translate3d(0, 0, 0)}
     .icon{
       width:46px;
       height:46px;
@@ -1304,14 +1341,16 @@
       padding:17px;
       overflow:hidden;
       position:relative;
+      transform: translateZ(0);
     }
     .timeline-box::before{
       content:"";
       position:absolute;
       inset:0;
       background:linear-gradient(110deg, transparent, rgba(244,217,143,.12), transparent);
-      transform:translateX(-110%);
+      transform:translate3d(-110%, 0, 0);
       animation:cardSweep 8.6s ease-in-out infinite;
+      will-change: transform;
     }
     .timeline-date{
       position:relative;
@@ -1472,6 +1511,7 @@
       border-top:1px solid rgba(255,255,255,.1);
       background:#050811;
       overflow:hidden;
+      transform: translateZ(0);
     }
     .footer::before{
       content:"";
@@ -1480,8 +1520,9 @@
       background:linear-gradient(110deg, transparent, rgba(244,217,143,.08), transparent);
       animation:footerSweep 12s linear infinite;
       pointer-events:none;
+      will-change: transform;
     }
-    @keyframes footerSweep{from{transform:translateX(-100%)}to{transform:translateX(100%)}}
+    @keyframes footerSweep{from{transform:translate3d(-100%, 0, 0)}to{transform:translate3d(100%, 0, 0)}}
     .footer-grid{
       position:relative;
       z-index:1;
@@ -1579,10 +1620,8 @@
       font-size:1.35rem
     }
 
-    /* Fixed visibility issue by transitioning JS dynamically instead of forcing opacity 0 in CSS */
     .reveal { will-change: transform, opacity; }
 
-    /* MOBILE APP FEEL RESPONSIVENESS */
     @media(max-width: 759px) {
       .grid-2, .grid-3, .grid-4, .hero-stats, .trust-grid {
         display: grid !important;
@@ -1609,7 +1648,6 @@
         line-height: 1.25;
         margin-bottom: 0;
       }
-      /* Extra text hidden by default on mobile for app grid feel */
       .card p {
         display: none;
         font-size: 0.78rem;
@@ -1619,7 +1657,6 @@
         padding-top: 10px;
         border-top: 1px solid rgba(255,255,255,0.06);
       }
-      /* Click to expand behavior */
       .card.expanded {
         grid-column: span 3;
         background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
@@ -1687,8 +1724,6 @@
       .footer{padding-bottom:30px}
       .footer-grid{grid-template-columns:1.35fr repeat(3,1fr);gap:34px}
       .float-actions{bottom:18px;right:18px}
-      
-      /* Reset cursor for desktop */
       .card { cursor: default; }
     }
 
@@ -2144,7 +2179,19 @@
       backTop?.classList.toggle('show', window.scrollY > 460);
     }
 
-    window.addEventListener('scroll', onScroll, { passive:true });
+    // Performance Update: Throttled scroll listener
+    let isScrolling = false;
+    window.addEventListener('scroll', () => {
+      if (!isScrolling) {
+        window.requestAnimationFrame(() => {
+          onScroll();
+          updateActiveNav();
+          isScrolling = false;
+        });
+        isScrolling = true;
+      }
+    }, { passive: true });
+    
     onScroll();
 
     backTop?.addEventListener('click', () => window.scrollTo({ top:0, behavior:'smooth' }));
@@ -2184,7 +2231,6 @@
           );
         }
         
-        // Refresh scroll trigger to account for new heights
         if(window.ScrollTrigger) ScrollTrigger.refresh();
       });
     });
@@ -2198,16 +2244,13 @@
       });
     });
     
-    // Feature: Card Click Expand for Mobile
     $$('.card').forEach(card => {
       card.addEventListener('click', () => {
         if(window.innerWidth < 760) {
-          // Close others
           $$('.card').forEach(c => {
              if(c !== card) c.classList.remove('expanded');
           });
           card.classList.toggle('expanded');
-          // Refresh scrolltrigger because layout changes
           setTimeout(() => { if(window.ScrollTrigger) ScrollTrigger.refresh(); }, 350);
         }
       });
@@ -2241,7 +2284,6 @@
       });
     }
 
-    window.addEventListener('scroll', updateActiveNav, { passive:true });
     updateActiveNav();
 
     function initAnimations(){
@@ -2251,7 +2293,6 @@
       if(window.gsap && window.ScrollTrigger){
         gsap.registerPlugin(ScrollTrigger);
 
-        // Define starting point manually to prevent stuck elements
         gsap.set('.reveal', { opacity:0, y:28 });
         
         gsap.to('.hero .reveal', {
@@ -2275,7 +2316,7 @@
             ease:'power3.out',
             scrollTrigger:{
               trigger:section,
-              start:'top 85%', // Adjusted for mobile consistency
+              start:'top 85%',
               once:true
             }
           });
@@ -2307,17 +2348,23 @@
           ease:'sine.inOut'
         });
 
+        // Performance Update: Replaced hundreds of simultaneous tweens with fast quickTo setters.
         gsap.utils.toArray('.card').forEach(card => {
+          const xTo = gsap.quickTo(card, "rotateY", {duration: 0.35, ease: "power2.out"});
+          const yTo = gsap.quickTo(card, "rotateX", {duration: 0.35, ease: "power2.out"});
+          
           card.addEventListener('mousemove', event => {
-            if(window.innerWidth < 760) return; // Disable hover 3D effect on mobile
+            if(window.innerWidth < 760) return; 
             const rect = card.getBoundingClientRect();
             const x = (event.clientX - rect.left) / rect.width - .5;
             const y = (event.clientY - rect.top) / rect.height - .5;
-            gsap.to(card, { rotateY:x * 5, rotateX:-y * 5, duration:.35, ease:'power2.out' });
+            xTo(x * 5);
+            yTo(-y * 5);
           });
           card.addEventListener('mouseleave', () => {
             if(window.innerWidth < 760) return;
-            gsap.to(card, { rotateY:0, rotateX:0, duration:.45, ease:'power2.out' });
+            xTo(0);
+            yTo(0);
           });
         });
 
@@ -2364,7 +2411,6 @@
       form.style.display = 'none';
       success?.classList.add('show');
 
-      // Refresh ScrollTrigger after form state changes
       setTimeout(() => { if(window.ScrollTrigger) ScrollTrigger.refresh(); }, 100);
 
       setTimeout(() => {
