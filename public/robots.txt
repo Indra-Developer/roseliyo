@@ -1,0 +1,7 @@
+
+
+User-agent: *
+Allow: /
+
+# Directs search engines to your sitemap
+Sitemap: https://www.roseliyo.com/sitemap.xml

@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>ROSELIYO – Pre-Book Now | Launch May 25, 2026</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="ROSELIYO - Pre-Book Now | Launch May 25, 2026">
+    <meta name="description" content="ROSELIYO - Earn rewards through entertainment. Pre-book now for exclusive early access. Official launch May 25, 2026.">
+    <meta name="keywords" content="ROSELIYO, earn rewards, entertainment, pre-book, early access, launch May 2026, rewards app, digital platform">
+    <meta name="author" content="ROSELIYO">
+
+    
+    <meta name="robots" content="index, follow">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
+    <link rel="canonical" href="https://www.roseliyo.com/"> 
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="image" href="https://www.roseliyo.com/logo.jpeg"> <link rel="icon" type="image/jpeg" href="https://www.roseliyo.com/logo.jpeg">
+    <link rel="apple-touch-icon" href="https://www.roseliyo.com/logo.jpeg">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.roseliyo.com/">
+    <meta property="og:site_name" content="ROSELIYO">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:title" content="ROSELIYO – Pre-Book Now | Launch May 25, 2026">
+    <meta property="og:description" content="ROSELIYO - Earn rewards through entertainment. Pre-book now for exclusive early access. Official launch May 25, 2026.">
+    <meta property="og:image" content="https://www.roseliyo.com/logo.jpeg"> 
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.roseliyo.com/">
+    <meta property="twitter:title" content="ROSELIYO – Pre-Book Now | Launch May 25, 2026">
+    <meta property="twitter:description" content="ROSELIYO - Earn rewards through entertainment. Pre-book now for exclusive early access. Official launch May 25, 2026.">
+    <meta property="twitter:image" content="https://www.roseliyo.com/logo.jpeg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+  html, body {
+  overflow-x: hidden;
+}
+:root{
+  --gold:#c9a84c;
+  --gold2:#f0d080;
+  --gold3:#a07828;
+  --gold-glow:rgba(201,168,76,0.35);
+  --black:#000000;
+  --bg:#080600;
+  --bg2:#0d0a02;
+  --card:#100e04;
+  --card2:#18150a;
+  --border:rgba(201,168,76,0.18);
+  --text:#e8d9a0;
+  --muted:#8a7a50;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Rajdhani',sans-serif;overflow-x:hidden;}
+
+/* ───── LOADER ───── */
+#loader{position:fixed;inset:0;background:#000;z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity .6s ease;}
+#loader.hide{opacity:0;pointer-events:none;}
+.loader-logo{font-family:'Cinzel',serif;font-size:2.8rem;color:var(--gold);letter-spacing:.3em;animation:pulse 1.4s ease-in-out infinite;}
+.loader-bar{width:200px;height:2px;background:#1a1500;border-radius:2px;margin-top:1.5rem;overflow:hidden;}
+.loader-fill{height:100%;background:linear-gradient(90deg,var(--gold3),var(--gold2));animation:fill 2s ease forwards;}
+@keyframes fill{from{width:0}to{width:100%}}
+@keyframes pulse{0%,100%{opacity:.5}50%{opacity:1}}
+
+/* ───── PARTICLES ───── */
+#particles{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0;}
+.particle{position:absolute;border-radius:50%;background:var(--gold);opacity:0;animation:float linear infinite;}
+@keyframes float{0%{opacity:0;transform:translateY(0) scale(0)}20%{opacity:.6}80%{opacity:.3}100%{opacity:0;transform:translateY(-100vh) scale(1.5)}}
+
+/* ───── NAVBAR ───── */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between;transition:.3s;border-bottom:1px solid transparent;}
+nav.scrolled{background:rgba(0,0,0,.92);border-color:var(--border);backdrop-filter:blur(12px);}
+
+.nav-left-group { display: flex; align-items: center; gap: 2.5rem; }
+.nav-logo{font-family:'Cinzel',serif;font-size:1.3rem;color:var(--gold);letter-spacing:.15em;text-decoration:none; font-weight: 700;}
+
+.nav-links{display:flex;gap:1.5rem;list-style:none;}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:.85rem;letter-spacing:.1em;transition:.3s;text-transform:uppercase;font-weight:600;}
+.nav-links a:hover{color:var(--gold);}
+
+.nav-cta{background:linear-gradient(135deg,var(--gold3),var(--gold));color:#000;padding:.6rem 1.6rem;border-radius:2px;font-family:'Cinzel',serif;font-size:.8rem;letter-spacing:.1em;text-decoration:none;font-weight:700;transition:.3s;text-transform: uppercase;}
+.nav-cta:hover{box-shadow:0 0 20px var(--gold-glow);transform:translateY(-1px);}
+
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;}
+.hamburger span{width:24px;height:2px;background:var(--gold);border-radius:2px;transition:.3s;}
+
+/* ───── HERO PRESALE ───── */
+#hero{position:relative;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:8rem 2rem 4rem;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 40%,rgba(201,168,76,.12) 0%,transparent 70%),linear-gradient(180deg,#000 0%,#0a0700 100%);}
+.hero-content{position:relative;z-index:2;width:100%;max-width:900px;}
+.coming-soon-badge{display:inline-block;background:rgba(201,168,76,.1);border:1px solid var(--gold);color:var(--gold);font-family:'Cinzel',serif;font-size:.7rem;letter-spacing:.3em;padding:.6rem 1.5rem;border-radius:50px;margin-bottom:2rem;text-transform:uppercase;animation:glow 2s ease infinite;}
+@keyframes glow{0%,100%{box-shadow:0 0 10px rgba(201,168,76,.3)}50%{box-shadow:0 0 25px rgba(201,168,76,.6)}}
+
+/* HERO IMAGE FIX */
+.hero-main-logo{width:160px; height:auto; margin:0 auto 1.5rem auto; display:block; filter:drop-shadow(0 0 30px rgba(201,168,76,.3)); animation:float-logo 4s ease-in-out infinite; mix-blend-mode: lighten;}
+@keyframes float-logo{0%,100%{transform:translateY(0)}50%{transform:translateY(-15px)}}
+
+.hero-h1{font-family:'Cinzel',serif;font-size:clamp(2.2rem,5.5vw,4.2rem);font-weight:900;line-height:1.1;background:linear-gradient(135deg,var(--gold2) 0%,var(--gold) 50%,var(--gold3) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:.8rem;}
+.hero-sub{font-size:1.05rem;color:var(--muted);max-width:680px;margin:0 auto 2rem;line-height:1.8;}
+
+/* ───── COUNTDOWN ───── */
+.countdown{background:linear-gradient(135deg,rgba(201,168,76,.08),rgba(160,120,40,.05));border:1px solid var(--border);border-radius:12px;padding:2.5rem;margin:2.5rem 0;backdrop-filter:blur(10px);}
+.countdown-title{font-family:'Cinzel',serif;font-size:.95rem;color:var(--gold);letter-spacing:.2em;margin-bottom:1.5rem;text-transform:uppercase;}
+.countdown-timer{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
+.timer-box{background:var(--card2);border:1px solid var(--gold);border-radius:8px;padding:1.2rem;min-width:80px;flex:0 1 100px;}
+.timer-num{font-family:'Cinzel',serif;font-size:2.2rem;color:var(--gold2);font-weight:700;line-height:1;}
+.timer-label{font-size:.7rem;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-top:.5rem;}
+
+/* ───── CTA BUTTONS ───── */
+.cta-btns{display:flex;gap:1.2rem;justify-content:center;flex-wrap:wrap;margin:2rem 0;z-index:10;}
+.btn-primary{background:linear-gradient(135deg,var(--gold3),var(--gold),var(--gold2));color:#000;padding:1rem 3rem;border:none;border-radius:4px;font-family:'Cinzel',serif;font-size:.95rem;letter-spacing:.12em;cursor:pointer;transition:.3s;text-decoration:none;font-weight:700;display:inline-block;text-transform:uppercase;}
+.btn-primary:hover{box-shadow:0 0 40px var(--gold-glow),0 0 80px rgba(201,168,76,.2);transform:translateY(-3px);}
+.btn-secondary{background:transparent;color:var(--gold);padding:1rem 2.5rem;border:1.5px solid var(--gold);border-radius:4px;font-family:'Cinzel',serif;font-size:.95rem;letter-spacing:.12em;cursor:pointer;transition:.3s;text-decoration:none;display:inline-block;text-transform:uppercase;}
+.btn-secondary:hover{background:rgba(201,168,76,.1);transform:translateY(-3px);}
+
+/* ───── LIMITED SLOTS ───── */
+.limited-slots{background:linear-gradient(135deg,rgba(240,208,128,.08),rgba(160,120,40,.08));border:1px solid rgba(240,208,128,.3);border-radius:8px;padding:1.5rem;margin:1.5rem 0;text-align:center;}
+.slots-text{font-family:'Cinzel',serif;color:var(--gold2);font-size:.95rem;letter-spacing:.1em;margin-bottom:.8rem;}
+.slots-bar{width:100%;height:6px;background:rgba(201,168,76,.1);border-radius:3px;overflow:hidden;margin-bottom:.8rem;}
+.slots-fill{height:100%;background:linear-gradient(90deg,var(--gold3),var(--gold2));width:68%;border-radius:3px;}
+.slots-counter{font-size:.85rem;color:var(--muted);}
+
+/* ───── BENEFITS BOX ───── */
+.presale-benefits{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:2rem;margin:2.5rem 0;max-width:600px;margin-left:auto;margin-right:auto;}
+.benefits-title{font-family:'Cinzel',serif;color:var(--gold);font-size:1rem;margin-bottom:1.2rem;letter-spacing:.1em;text-align:center;text-transform:uppercase;}
+.benefits-list{list-style:none;display:flex;flex-direction:column;gap:.8rem;}
+.benefits-list li{display:flex;align-items:center;gap:.8rem;color:var(--text);font-size:.95rem;}
+.benefits-list li::before{content:'\f00c';font-family:'Font Awesome 6 Free';font-weight:900;color:var(--gold);font-size:1.2rem;flex-shrink:0;}
+
+/* ───── SECTIONS ───── */
+section{padding:5rem 2rem;}
+.section-tag{font-family:'Cinzel',serif;font-size:.7rem;letter-spacing:.5em;color:var(--gold3);text-transform:uppercase;text-align:center;margin-bottom:.8rem;}
+.section-title{font-family:'Cinzel',serif;font-size:clamp(1.6rem,3.5vw,2.8rem);font-weight:700;text-align:center;background:linear-gradient(135deg,var(--gold2),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:.8rem;}
+.divider{width:80px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:.8rem auto 0;}
+.section-sub{text-align:center;color:var(--muted);max-width:650px;margin:0 auto 3rem;line-height:1.7;font-size:.95rem;}
+
+/* ───── ABOUT ───── */
+#about{background:var(--bg2);}
+.about-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;max-width:1100px;margin:0 auto;}
+.about-card{background:var(--card);border:1px solid var(--border);border-radius:6px;padding:2rem;position:relative;overflow:hidden;transition:.4s;}
+.about-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:0;transition:.4s;}
+.about-card:hover{border-color:rgba(201,168,76,.4);transform:translateY(-4px);box-shadow:0 20px 40px rgba(0,0,0,.4);}
+.about-card:hover::before{opacity:1;}
+.about-icon{font-size:2.2rem;margin-bottom:1rem;color:var(--gold);}
+.about-card h3{font-family:'Cinzel',serif;font-size:1rem;color:var(--gold);margin-bottom:.7rem;letter-spacing:.05em;}
+.about-card p{color:var(--muted);font-size:.9rem;line-height:1.6;}
+
+/* ───── PROGRAM FEATURES ───── */
+#program{background:var(--bg);}
+.features-tabs{display:flex;gap:1rem;justify-content:center;margin-bottom:2.5rem;flex-wrap:wrap;}
+.tab-btn{background:transparent;border:1px solid var(--border);color:var(--muted);padding:.6rem 1.6rem;border-radius:2px;font-family:'Cinzel',serif;font-size:.8rem;letter-spacing:.1em;cursor:pointer;transition:.3s;}
+.tab-btn.active,.tab-btn:hover{background:rgba(201,168,76,.1);border-color:var(--gold);color:var(--gold);}
+.features-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1.2rem;max-width:1100px;margin:0 auto;}
+.feat-card{background:var(--card2);border:1px solid var(--border);border-radius:6px;padding:1.6rem;transition:.4s;cursor:default;}
+.feat-card:hover{border-color:rgba(201,168,76,.5);transform:translateY(-5px);box-shadow:0 10px 40px rgba(201,168,76,.1);}
+.feat-icon{font-size:1.8rem;margin-bottom:.8rem;color:var(--gold);}
+.feat-card h4{font-family:'Cinzel',serif;font-size:.9rem;color:var(--gold);margin-bottom:.5rem;}
+.feat-card p{color:var(--muted);font-size:.82rem;line-height:1.5;}
+.tab-panel{display:none;}
+.tab-panel.active{display:block;}
+
+/* ───── HOW IT WORKS ───── */
+#howitworks{background:var(--bg2);}
+.steps{display:flex;gap:0;justify-content:center;flex-wrap:wrap;max-width:1100px;margin:0 auto;position:relative;}
+.step{flex:1;min-width:140px;max-width:180px;text-align:center;padding:1.5rem 1rem;position:relative;}
+.step-num{width:54px;height:54px;border-radius:50%;background:linear-gradient(135deg,var(--gold3),var(--gold));display:flex;align-items:center;justify-content:center;font-family:'Cinzel',serif;font-size:1.3rem;font-weight:700;color:#000;margin:0 auto 1rem;position:relative;z-index:2;box-shadow:0 0 20px var(--gold-glow);}
+.step-line{position:absolute;top:27px;left:50%;right:-50%;height:1px;background:linear-gradient(90deg,var(--gold),var(--gold3));z-index:1;}
+.step:last-child .step-line{display:none;}
+.step-icon{font-size:1.5rem;margin-bottom:.6rem;color:var(--gold);}
+.step h4{font-family:'Cinzel',serif;font-size:.85rem;color:var(--gold);margin-bottom:.4rem;text-transform:uppercase;}
+.step p{color:var(--muted);font-size:.78rem;line-height:1.4;}
+
+/* ───── EARNING METHODS ───── */
+#earn{background:var(--bg);}
+.task-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;max-width:1100px;margin:0 auto;}
+.task-card{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:2rem;position:relative;overflow:hidden;transition:.4s;}
+.task-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;opacity:0;transition:.4s;}
+.task-card.yt::after{background:linear-gradient(90deg,#ff0000,#ff6060);}
+.task-card.sp::after{background:linear-gradient(90deg,#1db954,#1ed760);}
+.task-card.ad::after{background:linear-gradient(90deg,var(--gold3),var(--gold2));}
+.task-card:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(0,0,0,.4);}
+.task-card:hover::after{opacity:1;}
+.task-head{display:flex;align-items:center;gap:1rem;margin-bottom:1.2rem;}
+.task-icon{font-size:2.5rem;color:var(--gold);}
+.task-title{font-family:'Cinzel',serif;font-size:1rem;color:var(--gold);}
+.badges{display:flex;gap:.5rem;margin-bottom:1rem;flex-wrap:wrap;}
+.badge{padding:.3rem .8rem;border-radius:20px;font-size:.72rem;letter-spacing:.05em;font-weight:600;}
+.badge-time{background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.3);color:var(--gold);}
+.badge-earn{background:rgba(201,168,76,.2);border:1px solid var(--gold3);color:var(--gold2);}
+.task-card p{color:var(--muted);font-size:.85rem;line-height:1.6;}
+
+/* ───── EARLY ACCESS BENEFITS ───── */
+#earlyaccess{background:var(--bg2);}
+.benefits-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.2rem;max-width:1100px;margin:0 auto;}
+.benefit-card{background:linear-gradient(135deg,#100c00,#1e1700,#100c00);border:1px solid var(--border);border-radius:8px;padding:1.8rem;text-align:center;position:relative;overflow:hidden;transition:.4s;}
+.benefit-card:hover{border-color:var(--gold);transform:translateY(-4px);box-shadow:0 15px 40px rgba(201,168,76,.1);}
+.benefit-num{font-family:'Cinzel',serif;font-size:2rem;color:var(--gold2);font-weight:700;margin-bottom:.5rem;}
+.benefit-label{font-family:'Cinzel',serif;color:var(--gold);font-size:.9rem;margin-bottom:.5rem;letter-spacing:.05em;text-transform:uppercase;}
+.benefit-desc{color:var(--muted);font-size:.85rem;line-height:1.5;}
+.badge-exclusive{position:absolute;top:12px;right:12px;background:linear-gradient(135deg,var(--gold3),var(--gold2));color:#000;font-family:'Cinzel',serif;font-size:.65rem;padding:.3rem .7rem;border-radius:20px;letter-spacing:.1em;font-weight:700;}
+
+/* ───── LAUNCH ROADMAP ───── */
+#roadmap{background:var(--bg);}
+.roadmap-timeline{max-width:900px;margin:0 auto;position:relative;padding:2rem 0;}
+.roadmap-timeline::before{content:'';position:absolute;left:50%;transform:translateX(-50%);top:0;bottom:0;width:2px;background:linear-gradient(180deg,transparent,var(--gold),var(--gold3),transparent);z-index:0;}
+.timeline-item{margin-bottom:3rem;position:relative;z-index:2;}
+.timeline-item:nth-child(odd){margin-left:0;margin-right:auto;width:calc(50% - 30px);text-align:right;padding-right:60px;}
+.timeline-item:nth-child(even){margin-left:auto;margin-right:0;width:calc(50% - 30px);text-align:left;padding-left:60px;}
+.timeline-dot{position:absolute;width:12px;height:12px;background:var(--gold);border-radius:50%;left:50%;transform:translateX(-50%);top:5px;box-shadow:0 0 20px var(--gold-glow);}
+.timeline-date{font-family:'Cinzel',serif;font-size:.85rem;color:var(--gold);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.5rem;}
+.timeline-title{font-family:'Cinzel',serif;font-size:1rem;color:var(--gold);margin-bottom:.5rem;}
+.timeline-desc{color:var(--muted);font-size:.85rem;line-height:1.6;}
+
+/* ───── DOWNLOAD SECTION ───── */
+#download{background:linear-gradient(135deg,#090600,#1a1200,#090600);position:relative;overflow:hidden;}
+#download::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 80% at 50% 50%,rgba(201,168,76,.1),transparent 70%);}
+.download-content{position:relative;z-index:2;text-align:center;}
+.download-title{font-family:'Cinzel',serif;font-size:clamp(1.8rem,4vw,3.2rem);color:var(--gold);margin-bottom:1rem;}
+.download-sub{color:var(--muted);margin-bottom:2rem;font-size:1rem;line-height:1.6;}
+.download-info{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:2rem;margin:2rem 0;max-width:700px;margin-left:auto;margin-right:auto;}
+.info-title{font-family:'Cinzel',serif;font-size:1rem;color:var(--gold);margin-bottom:1rem;letter-spacing:.1em;text-transform:uppercase;}
+.info-content{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1.2rem;margin-bottom:1.5rem;}
+.info-item{text-align:center;}
+.info-label{color:var(--muted);font-size:.8rem;text-transform:uppercase;letter-spacing:.1em;margin-bottom:.4rem;}
+.info-value{font-family:'Cinzel',serif;font-size:1.1rem;color:var(--gold2);}
+.dl-btns{display:flex;gap:1.2rem;justify-content:center;flex-wrap:wrap;}
+.dl-btn{display:flex;align-items:center;gap:.8rem;background:var(--card2);border:1px solid var(--border);border-radius:8px;padding:1rem 1.8rem;text-decoration:none;transition:.4s;color:var(--text);}
+.dl-btn:hover{border-color:var(--gold);box-shadow:0 0 25px var(--gold-glow);transform:translateY(-3px);}
+.dl-icon{font-size:2rem;color:var(--gold);}
+.dl-text .small{font-size:.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;}
+.dl-text .big{font-family:'Cinzel',serif;font-size:1rem;color:var(--gold);}
+
+/* ───── WAITLIST FORM ───── */
+#waitlist{background:var(--bg2);}
+.form-wrap{max-width:600px;margin:0 auto;}
+.form-group{margin-bottom:1.2rem;}
+.form-group label{display:block;font-family:'Cinzel',serif;font-size:.85rem;color:var(--gold);margin-bottom:.5rem;letter-spacing:.05em;text-transform:uppercase;}
+.form-group input,.form-group select{width:100%;padding:.85rem 1rem;background:var(--card2);border:1px solid var(--border);color:var(--text);font-family:'Rajdhani',sans-serif;font-size:.95rem;border-radius:4px;transition:.3s;}
+.form-group input:focus,.form-group select:focus{outline:none;border-color:var(--gold);box-shadow:0 0 15px rgba(201,168,76,.2);}
+.checkbox-group{display:flex;gap:.8rem;align-items:flex-start;margin-bottom:1rem;}
+.checkbox-group input[type="checkbox"]{width:20px;height:20px;cursor:pointer;accent-color:var(--gold);flex-shrink:0;}
+.checkbox-group label{margin:0;font-size:.85rem;cursor:pointer;}
+.submit-btn{width:100%;background:linear-gradient(135deg,var(--gold3),var(--gold),var(--gold2));color:#000;padding:1rem;border:none;border-radius:4px;font-family:'Cinzel',serif;font-size:.95rem;letter-spacing:.12em;cursor:pointer;transition:.3s;font-weight:700;text-transform:uppercase;margin-top:.5rem;}
+.submit-btn:hover{box-shadow:0 0 30px var(--gold-glow);transform:translateY(-2px);}
+.form-success{display:none;text-align:center;padding:2rem;background:rgba(0,200,100,.08);border:1px solid rgba(0,200,100,.3);border-radius:8px;}
+.form-success.show{display:block;animation:slideIn .5s ease;}
+@keyframes slideIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+.success-icon{font-size:3rem;margin-bottom:1rem;color:#00c864;}
+.success-text{color:#00c864;font-family:'Cinzel',serif;font-size:1rem;margin-bottom:.5rem;}
+.success-sub{color:var(--muted);font-size:.9rem;}
+
+/* ───── FAQ ───── */
+#faq{background:var(--bg);}
+.faq-wrap{max-width:800px;margin:0 auto;}
+.faq-item{border:1px solid var(--border);border-radius:4px;margin-bottom:.8rem;overflow:hidden;transition:.3s;}
+.faq-item:hover{border-color:rgba(201,168,76,.3);}
+.faq-q{display:flex;align-items:center;justify-content:space-between;padding:1.2rem 1.5rem;cursor:pointer;font-family:'Cinzel',serif;font-size:.92rem;color:var(--text);letter-spacing:.03em;}
+.faq-q:hover{color:var(--gold);}
+.faq-icon{color:var(--gold);font-size:1.2rem;transition:.3s;flex-shrink:0;}
+.faq-item.open .faq-icon{transform:rotate(45deg);}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .4s;}
+.faq-item.open .faq-a{max-height:300px;padding:0 1.5rem 1.2rem;}
+.faq-a p{color:var(--muted);font-size:.88rem;line-height:1.7;}
+#form-success {
+  display: none;
+}
+/* FIX FOR ULTRA-NARROW SCREENS (BELOW 250px) */
+
+
+/* ───── FOOTER ───── */
+footer{background:#000;border-top:1px solid var(--border);padding:3rem 2rem 1.5rem;}
+.footer-content{max-width:1100px;margin:0 auto;}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:2rem;}
+.footer-logo{font-family:'Cinzel',serif;font-size:1.5rem;color:var(--gold);letter-spacing:.2em;margin-bottom:.8rem;}
+.footer-desc{color:var(--muted);font-size:.85rem;line-height:1.7;}
+.footer-col h4{font-family:'Cinzel',serif;font-size:.85rem;color:var(--gold);letter-spacing:.1em;margin-bottom:1rem;text-transform:uppercase;}
+.footer-col ul{list-style:none;}
+.footer-col ul li{margin-bottom:.5rem;}
+.footer-col ul li a{color:var(--muted);text-decoration:none;font-size:.85rem;transition:.3s;}
+.footer-col ul li a:hover{color:var(--gold);}
+.footer-socials{display:flex;gap:.8rem;margin:1rem 0;}
+.soc-btn{width:38px;height:38px;border-radius:50%;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:1rem;text-decoration:none;transition:.3s;}
+.soc-btn:hover{border-color:var(--gold);color:var(--gold);box-shadow:0 0 12px var(--gold-glow);}
+.footer-bottom{text-align:center;color:var(--muted);font-size:.78rem;border-top:1px solid var(--border);padding-top:1.5rem;}
+
+/* ───── BACK TO TOP & WHATSAPP ───── */
+.back-top{position:fixed;bottom:5rem;right:1.5rem;z-index:800;width:44px;height:44px;background:linear-gradient(135deg,var(--gold3),var(--gold));border-radius:50%;display:flex;align-items:center;justify-content:center;color:#000;font-size:1.2rem;cursor:pointer;opacity:0;transition:.3s;border:none;box-shadow:0 4px 20px var(--gold-glow);}
+.back-top.show{opacity:1;}
+.back-top:hover{transform:translateY(-3px);}
+.whatsapp-btn{position:fixed;bottom:1.5rem;right:1.5rem;z-index:800;width:52px;height:52px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.6rem;text-decoration:none;box-shadow:0 4px 20px rgba(37,211,102,.3);transition:.3s;}
+.whatsapp-btn:hover{transform:scale(1.1);color:#fff;}
+
+/* ───── REVEAL ───── */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease;}
+.reveal.visible{opacity:1;transform:none;}
+
+/* ───── RESPONSIVE (MOBILE FIXES) ───── */
+@media(max-width:900px){
+  .nav-left-group { gap: 1rem; }
+  .nav-links a { font-size: 0.75rem; }
+}
+
+@media(max-width:768px){
+  .nav-links{
+    display:none; 
+    flex-direction:column; 
+    position:absolute; 
+    top:100%; 
+    left:0; 
+    right:0; 
+    background:rgba(0,0,0,0.96); 
+    padding:2rem; 
+    border-bottom:1px solid var(--border);
+    text-align: center;
+  }
+  .nav-links.mobile-active { display:flex; }
+  .hamburger{display:flex;}
+  .nav-cta { display: none; }
+  
+  section{padding:3rem 1.5rem;}
+  .roadmap-timeline::before{left:0;}
+  .timeline-item:nth-child(odd),.timeline-item:nth-child(even){width:100%;margin:0;padding-left:50px;text-align:left;}
+  .timeline-dot{left:0;}
+  .footer-grid{grid-template-columns:1fr;}
+  .step-line{display:none;} /* kills the horizontal overflow line */
+}
+
+/* Triggered early at 550px to prevent the layout gap */
+@media(max-width:550px){
+  .countdown-timer{gap:.5rem;}
+  .timer-box{min-width:70px;}
+  .timer-num{font-size:1.5rem;}
+  .cta-btns{gap:.8rem;flex-direction:column;}
+  .btn-primary,.btn-secondary{width:100%;}
+  .info-content{grid-template-columns:1fr;}
+}
+
+
+</style>
+</head>
+<body>
+
+<div id="loader">
+  <div class="loader-logo">ROSELIYO</div>
+  <div class="loader-bar"><div class="loader-fill"></div></div>
+</div>
+
+<nav id="navbar">
+  <div class="nav-left-group">
+    <a href="#" class="nav-logo"> ROSELIYO</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#program">Features</a></li>
+      <li><a href="#howitworks">How it works</a></li>
+      <li><a href="#earn">Referral</a></li>
+      <li><a href="#earlyaccess">VIP</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+  </div>
+  
+  <div class="hamburger" id="hamburger">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<div id="particles"></div>
+
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <span class="coming-soon-badge"> Pre-Launch Phase</span>
+    
+    <img src="./logo.jpeg" alt="Logo" class="hero-main-logo" onerror="this.style.display='none'">
+    
+    <h1 class="hero-h1">Coming Very Soon</h1>
+    <p class="hero-sub">The Ultimate Entertainment-Based Earning Platform — Watch Videos, Listen to Music, Complete Tasks & Earn Real Money</p>
+
+    <div class="countdown">
+      <div class="countdown-title"><i class="fa-solid fa-hourglass-half"></i> Official Launch Countdown</div>
+      <div class="countdown-timer">
+        <div class="timer-box">
+          <div class="timer-num" id="days">00</div>
+          <div class="timer-label">Days</div>
+        </div>
+        <div class="timer-box">
+          <div class="timer-num" id="hours">00</div>
+          <div class="timer-label">Hours</div>
+        </div>
+        <div class="timer-box">
+          <div class="timer-num" id="minutes">00</div>
+          <div class="timer-label">Minutes</div>
+        </div>
+        <div class="timer-box">
+          <div class="timer-num" id="seconds">00</div>
+          <div class="timer-label">Seconds</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cta-btns">
+      <a href="#waitlist" class="btn-primary">Pre-Book Now</a>
+      <a href="#earlyaccess" class="btn-secondary"> See Benefits</a>
+    </div>
+
+    <div class="limited-slots reveal">
+      <div class="slots-text">Limited Pre-Book Slots: 3,847 / 5,000 Filled</div>
+      <div class="slots-bar"><div class="slots-fill"></div></div>
+      <div class="slots-counter">Only 1,153 early access slots remaining — Closes May 20, 2026</div>
+    </div>
+
+    <div class="presale-benefits reveal">
+      <div class="benefits-title">Pre-Book Your Exclusive Benefits (₹500+ value)</div>
+      <ul class="benefits-list">
+        <li>500 bonus coins on day one </li>
+        <li>2X reward multiplier for 30 days</li>
+        <li>7 days early access (May 18, 2026)</li>
+        <li>1 free VIP pass </li>
+        <li>Lifetime +10% referral bonus increase</li>
+        <li>24/7 priority customer support</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <p class="section-tag">  About ROSELIYO  </p>
+  <h2 class="section-title">What is ROSELIYO?</h2>
+  <div class="divider"></div>
+  <p class="section-sub">ROSELIYO is India's premium entertainment-based earning platform. Watch, listen, complete tasks, and earn real money instantly.</p>
+  <div class="about-grid reveal">
+    <div class="about-card">
+      <div class="about-icon"><i class="fa-solid fa-crosshairs"></i></div>
+      <h3>Earn While Entertained</h3>
+      <p>Get paid for activities you already love — YouTube videos, Spotify songs, advertisements. Entertainment meets earning.</p>
+    </div>
+    <div class="about-card">
+      <div class="about-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+      <h3>Pan-India Platform</h3>
+      <p>Available across India with instant UPI & bank transfers. Withdraw your earnings anytime, anywhere without minimum limits.</p>
+    </div>
+    <div class="about-card">
+      <div class="about-icon"><i class="fa-regular fa-gem"></i></div>
+      <h3>Premium Features</h3>
+      <p>VIP membership, referral system, affiliate marketing, and exclusive tasks. Premium features available at affordable prices.</p>
+    </div>
+    <div class="about-card">
+      <div class="about-icon"><i class="fa-solid fa-shield-halved"></i></div>
+      <h3>100% Secure & Transparent</h3>
+      <p>All transactions visible in real-time. Your data is encrypted. No hidden charges. All earnings are legitimate and instantly withdrawable.</p>
+    </div>
+    <div class="about-card">
+      <div class="about-icon"><i class="fa-solid fa-network-wired"></i></div>
+      <h3>Referral Powerhouse</h3>
+      <p>Genuine 3-level network system. Build your team and earn passive income. No recruitment pressure — organic growth rewarded.</p>
+    </div>
+    <div class="about-card">
+      <div class="about-icon"><i class="fa-solid fa-bolt"></i></div>
+      <h3>Zero Investment</h3>
+      <p>Completely free to join and start earning. Premium features are optional upgrades. Earn first, decide later.</p>
+    </div>
+  </div>
+</section>
+
+<section id="program">
+  <p class="section-tag">  Program Features  </p>
+  <h2 class="section-title">What ROSELIYO Includes</h2>
+  <div class="divider"></div>
+  <p class="section-sub">Complete feature set designed for maximum earning potential and user engagement.</p>
+  <div class="features-tabs">
+    <button class="tab-btn active" data-tab="user"><i class="fa-regular fa-user"></i> User Features</button>
+    <button class="tab-btn" data-tab="admin"><i class="fa-solid fa-gear"></i> Admin Features</button>
+  </div>
+  <div class="tab-panel active" id="tab-user">
+    <div class="features-grid reveal">
+      <div class="feat-card"><div class="feat-icon"><i class="fa-solid fa-mobile-screen-button"></i></div><h4>OTP Login</h4><p>Secure phone-based login. No passwords needed. Instant access.</p></div>
+      <div class="feat-card"><div class="feat-icon"><i class="fa-regular fa-user"></i></div><h4>User Profile</h4><p>Personalized dashboard with earnings overview and history.</p></div>
+      <div class="feat-card"><div class="feat-icon"><i class="fa-solid fa-link"></i></div><h4>Referral System</h4><p>3-level referral network with genuine passive income.</p></div>
+      <div class="feat-card"><div class="feat-icon"><i class="fa-solid fa-crown"></i></div><h4>VIP Membership</h4><p>Premium 1-day pass with 3× rewards and exclusive tasks.</p></div>
+      <div class="feat-card"><div class="feat-icon"><i class="fa-solid fa-wallet"></i></div><h4>Smart Wallet</h4><p>Real-time earnings wallet with complete transaction history.</p></div>
+      <div class="feat-card"><div class="feat-icon"><i class="fa-solid fa-building-columns"></i></div><h4>Withdrawals</h4><p>Instant transfers to bank accounts and UPI wallets.</p></div>
+      <div class="feat-card"><div class="feat-icon"><i class="fa-solid fa-bullhorn"></i></div><h4>Ad Rewards</h4><p>Watch ads and earn instant rewards. Multiple ad types available.</p></div>
+      <div class="feat-card"><div class="feat-icon"><i class="fa-brands fa-spotify"></i></div><h4>Spotify Tasks</h4><p>Listen to songs and earn per track. Enjoy music, get paid.</p></div>
+      <div class="feat-card"><div class="feat-icon"><i class="fa-brands fa-youtube"></i></div><h4>YouTube Tasks</h4><p>Watch videos and complete view tasks for instant rewards.</p></div>
+      <div class="feat-card"><div class="feat-icon"><i class="fa-regular fa-bell"></i></div><h4>Notifications</h4><p>Real-time alerts for new tasks, bonuses, and withdrawals.</p></div>
+    </div>
+  </div>
+  <div class="tab-panel" id="tab-admin">
+    <div class="features-grid reveal">
+      <div class="feat-card"><div class="feat-icon"><i class="fa-solid fa-users-gear"></i></div><h4>User Management</h4><p>Complete user database with KYC verification and account management.</p></div>
+      <div class="feat-card"><div class="feat-icon"><i class="fa-solid fa-clipboard-list"></i></div><h4>Task Management</h4><p>Create and manage all task types with custom rewards and timers.</p></div>
+      <div class="feat-card"><div class="feat-icon"><i class="fa-solid fa-sitemap"></i></div><h4>Referral Monitoring</h4><p>Track network trees and monitor commission flow.</p></div>
+      <div class="feat-card"><div class="feat-icon"><i class="fa-solid fa-money-check-dollar"></i></div><h4>Withdrawal Control</h4><p>Review and approve withdrawals with fraud detection.</p></div>
+      <div class="feat-card"><div class="feat-icon"><i class="fa-solid fa-chart-line"></i></div><h4>Analytics Dashboard</h4><p>Real-time reports on growth, revenue, and user activity.</p></div>
+      <div class="feat-card"><div class="feat-icon"><i class="fa-solid fa-tower-broadcast"></i></div><h4>Notification Control</h4><p>Send targeted push notifications to user segments.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="howitworks">
+  <p class="section-tag">Simple Process  </p>
+  <h2 class="section-title">How It Works</h2>
+  <div class="divider"></div>
+  <p class="section-sub">Get started in 6 simple steps and start earning within minutes.</p>
+  <div class="steps reveal">
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-line"></div>
+      <div class="step-icon"><i class="fa-solid fa-user-lock"></i></div>
+      <h4>Register</h4>
+      <p>Login with your mobile number via OTP</p>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-line"></div>
+      <div class="step-icon"><i class="fa-solid fa-list-check"></i></div>
+      <h4>Complete Tasks</h4>
+      <p>Watch videos, listen to music, view ads</p>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-line"></div>
+      <div class="step-icon"><i class="fa-solid fa-hand-holding-dollar"></i></div>
+      <h4>Earn Rewards</h4>
+      <p>Coins credited to wallet instantly</p>
+    </div>
+    <div class="step">
+      <div class="step-num">5</div>
+      <div class="step-line"></div>
+      <div class="step-icon"><i class="fa-solid fa-share-nodes"></i></div>
+      <h4>Refer Friends</h4>
+      <p>Share link and earn commissions</p>
+    </div>
+    <div class="step">
+      <div class="step-num">6</div>
+      <div class="step-icon"><i class="fa-solid fa-money-bill-transfer"></i></div>
+      <h4>Withdraw</h4>
+      <p>Transfer to bank or UPI anytime</p>
+    </div>
+  </div>
+</section>
+
+<section id="earn">
+  <p class="section-tag">  Earning Methods  </p>
+  <h2 class="section-title">Multiple Ways to Earn</h2>
+  <div class="divider"></div>
+  <p class="section-sub">Choose your favorite tasks and start collecting rewards. Different tasks, different rewards.</p>
+  <div class="task-grid reveal">
+    <div class="task-card yt">
+      <div class="task-head">
+        <div class="task-icon"><i class="fa-brands fa-youtube"></i></div>
+        <div class="task-title">YouTube Tasks</div>
+      </div>
+      <div class="badges">
+        <span class="badge badge-time"><i class="fa-solid fa-hourglass-half"></i> 2–5 minutes</span>
+        </div>
+      <p>Watch sponsored videos till completion. New videos added daily. Instant payment on completion.</p>
+    </div>
+    <div class="task-card sp">
+      <div class="task-head">
+        <div class="task-icon"><i class="fa-brands fa-spotify"></i></div>
+        <div class="task-title">Spotify Tasks</div>
+      </div>
+      <div class="badges">
+        <span class="badge badge-time"><i class="fa-solid fa-hourglass-half"></i> 30 sec–3 min</span>
+        </div>
+      <p>Listen to songs on Spotify and earn per track. Enjoy new music while building earnings.</p>
+    </div>
+    <div class="task-card ad">
+      <div class="task-head">
+        <div class="task-icon"><i class="fa-solid fa-tv"></i></div>
+        <div class="task-title">Advertisement Tasks</div>
+      </div>
+      <div class="badges">
+        <span class="badge badge-time"><i class="fa-solid fa-hourglass-half"></i> 15–60 seconds</span>
+        </div>
+      <p>View short ads and earn instantly. Fastest way to accumulate coins. Multiple ads available daily.</p>
+    </div>
+    <div class="task-card ad">
+      <div class="task-head">
+        <div class="task-icon"><i class="fa-solid fa-trophy"></i></div>
+        <div class="task-title">Daily Challenges</div>
+      </div>
+      <div class="badges">
+        <span class="badge badge-time"><i class="fa-solid fa-hourglass-half"></i> Resets Daily</span>
+        </div>
+      <p>Complete daily streaks for bonus rewards. Achieve goals and earn multiplied bonuses.</p>
+    </div>
+  </div>
+</section>
+
+<section id="earlyaccess">
+  <p class="section-tag">  Pre-Book Rewards  </p>
+  <h2 class="section-title">What Early Birds Unlock</h2>
+  <div class="divider"></div>
+  <p class="section-sub">Pre-book now and unlock exclusive bonuses worth 5% absolutely free.</p>
+  <div class="benefits-grid reveal">
+    <div class="benefit-card">
+      <div class="badge-exclusive">EXCLUSIVE</div>
+      <div class="benefit-num">Free</div>
+      <div class="benefit-label">Bonus Coins</div>
+      <div class="benefit-desc">₹50 value instant credit on day one</div>
+    </div>
+    <div class="benefit-card">
+      <div class="badge-exclusive">EXCLUSIVE</div>
+      <div class="benefit-num">2X</div>
+      <div class="benefit-label">Rewards Multiplier</div>
+      <div class="benefit-desc">Double all earnings for 30 days</div>
+    </div>
+    <div class="benefit-card">
+      <div class="badge-exclusive">EXCLUSIVE</div>
+      <div class="benefit-num">7</div>
+      <div class="benefit-label">Early Access Days</div>
+      <div class="benefit-desc">Use app one week before public launch</div>
+    </div>
+    <div class="benefit-card">
+      <div class="badge-exclusive">WORTH </div>
+      <div class="benefit-num">VIP</div>
+      <div class="benefit-label">Free Pass</div>
+      <div class="benefit-desc">1-day premium with 3× rewards</div>
+    </div>
+    <div class="benefit-card">
+      <div class="badge-exclusive">LIFETIME</div>
+      <div class="benefit-num">+10%</div>
+      <div class="benefit-label">Referral Bonus</div>
+      <div class="benefit-desc">Permanently higher commissions</div>
+    </div>
+    <div class="benefit-card">
+      <div class="badge-exclusive">PRIORITY</div>
+      <div class="benefit-num">24/7</div>
+      <div class="benefit-label">Support Access</div>
+      <div class="benefit-desc">Priority help queue & dedicated team</div>
+    </div>
+  </div>
+</section>
+
+<section id="roadmap">
+  <p class="section-tag">  Launch Timeline  </p>
+  <h2 class="section-title">ROSELIYO Launch Schedule</h2>
+  <div class="divider"></div>
+  <p class="section-sub">Here's exactly when everything happens. Mark your calendar!</p>
+  
+  <div class="roadmap-timeline reveal">
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-date">May 9 , 2026</div>
+      <div class="timeline-title">Pre-Booking Phase</div>
+      <div class="timeline-desc">Pre-book your early access. Limited 5,000 slots available. Secure your exclusive benefits before slots close.</div>
+    </div>
+    
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-date">May 18, 2026</div>
+      <div class="timeline-title">Early Access Begins</div>
+      <div class="timeline-desc">Pre-bookers get exclusive 7-day early access. Download app, receive 500 bonus coins, activate 2X multiplier.</div>
+    </div>
+    
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-date">May 20, 2026</div>
+      <div class="timeline-title">Pre-Booking Closes</div>
+      <div class="timeline-desc">No more pre-book slots available. Public launch countdown begins. Last day to secure early access benefits.</div>
+    </div>
+    
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-date">May 25, 2026</div>
+      <div class="timeline-title"> Official Public Launch</div>
+      <div class="timeline-desc">ROSELIYO officially launches for all users. Public download available on Google Play. App goes live across India.</div>
+    </div>
+    
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-date">May 25 Onwards</div>
+      <div class="timeline-title">Continuous Updates</div>
+      <div class="timeline-desc">New features, tasks, and improvements released regularly. Community feedback drives development.</div>
+    </div>
+  </div>
+</section>
+
+<section id="waitlist">
+  <p class="section-tag">  Secure Your Spot  </p>
+  <h2 class="section-title">Pre-Book Your Early Access</h2>
+  <div class="divider"></div>
+  <p class="section-sub">Limited slots closing May 20, 2026. Register now to claim your exclusive bonuses.</p>
+  
+  <div class="form-wrap reveal">
+    <form id="prebook-form">
+      <div class="form-group">
+        <label for="name">Full Name *</label>
+        <input type="text" id="name" placeholder="Your full name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address *</label>
+        <input type="email" id="email" placeholder="Roseliyoads@gmail.com" required>
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Mobile Number *</label>
+        <input type="tel" id="phone" placeholder="+91 80744 02666" required>
+      </div>
+
+      <div class="form-group">
+        <label for="state">State *</label>
+        <select id="state" required>
+          <option value="">Select your state</option>
+          <option value="Telangana">Telangana</option>
+          <option value="Andhra Pradesh">Andhra Pradesh</option>
+          <option value="Karnataka">Karnataka</option>
+          <option value="Tamil Nadu">Tamil Nadu</option>
+          <option value="Maharashtra">Maharashtra</option>
+          <option value="Delhi">Delhi</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+
+      <button type="submit" class="submit-btn">Confirm My Early Access</button>
+    </form>
+
+    <div class="form-success" id="form-success">
+      <div class="success-icon"><i class="fa-solid fa-check"></i></div>
+      <div class="success-text">Pre-Booking Confirmed!</div>
+      <div class="success-sub">Check your email for confirmation. Early access begins May 18, 2026.</div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <p class="section-tag">  Common Questions  </p>
+  <h2 class="section-title">Pre-Launch FAQ</h2>
+  <div class="divider"></div>
+  <p class="section-sub">Everything you need to know about ROSELIYO and pre-booking.</p>
+  
+  <div class="faq-wrap reveal">
+    <div class="faq-item">
+      <div class="faq-q">When does ROSELIYO officially launch? <span class="faq-icon"><i class="fa-solid fa-plus"></i></span></div>
+      <div class="faq-a"><p>Official public launch is <strong>May 25, 2026</strong>. Pre-bookers get exclusive access 7 days early on <strong>May 18, 2026</strong>.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What happens after I pre-book? <span class="faq-icon"><i class="fa-solid fa-plus"></i></span></div>
+      <div class="faq-a"><p>You'll receive a confirmation email immediately. On May 18, you get download link. Register, get 500 bonus coins, and start earning with your 2X multiplier active.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Are the pre-book bonuses guaranteed? <span class="faq-icon"><i class="fa-solid fa-plus"></i></span></div>
+      <div class="faq-a"><p>100% guaranteed. All pre-bookers receive: 500 coins (₹50), 2× multiplier (30 days), free VIP pass, +10% lifetime referral bonus, and priority support.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Is pre-booking free or paid? <span class="faq-icon"><i class="fa-solid fa-plus"></i></span></div>
+      <div class="faq-a"><p>Completely FREE. No payment required. The app is free to download and use. Premium features are optional add-ons.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How many pre-book slots are available? <span class="faq-icon"><i class="fa-solid fa-plus"></i></span></div>
+      <div class="faq-a"><p>5,000 total slots. Currently 3,847 filled (1,153 remaining). Pre-booking closes May 20, 2026. After that, join the public launch on May 25.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What if I miss the pre-booking deadline? <span class="faq-icon"><i class="fa-solid fa-plus"></i></span></div>
+      <div class="faq-a"><p>You can still download on May 25 (public launch), but you won't get early access bonuses. These are exclusive to pre-bookers only.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How do I download the app? <span class="faq-icon"><i class="fa-solid fa-plus"></i></span></div>
+      <div class="faq-a"><p>Visit the Download section above. Choose Google Play, APK, or Web version. Install on your Android device (5.0+). Register with OTP. Start earning!</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Is my data safe? <span class="faq-icon"><i class="fa-solid fa-plus"></i></span></div>
+      <div class="faq-a"><p>Yes. All data is encrypted and secure. We never share personal information. ROSELIYO follows strict privacy and data protection policies.</p></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-content">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">  ROSELIYO</div>
+        <p class="footer-desc">India's premier entertainment-based earning platform. Coming May 25, 2026. Pre-book now for exclusive early access benefits worth ₹500+.</p>
+        <div class="footer-socials">
+          <!-- <a href="#" class="soc-btn" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a> -->
+          <a href="https://www.instagram.com/roseliyoads" class="soc-btn" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          
+          <a href="https://youtube.com/@spotlightbytharun" class="soc-btn" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="https://wa.me/918074402666" class="soc-btn" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#program">Program</a></li>
+          <li><a href="#earn">Earn With Us</a></li>
+          <li><a href="#roadmap">Launch Timeline</a></li>
+          </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Earning Methods</h4>
+        <ul>
+          <li><a href="#earn">YouTube Tasks</a></li>
+          <li><a href="#earn">Spotify Tasks</a></li>
+          <li><a href="#earn">Ad Rewards</a></li>
+          <li><a href="#earn">Daily Challenges</a></li>
+          <li><a href="#earn">Referrals</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="tel:+918074402666">Contact Us phno: 80744 02666</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms & Conditions</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#">Email: Roseliyoads@gmail.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 ROSELIYO. All Rights Reserved. Made with   for Earners | Privacy Policy | Terms of Service</p>
+    </div>
+  </div>
+</footer>
+
+<button class="back-top" id="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})"><i class="fa-solid fa-chevron-up"></i></button>
+<a href="https://wa.me/918074402666" class="whatsapp-btn" target="_blank" title="WhatsApp Support"><i class="fa-brands fa-whatsapp"></i></a>
+
+<script>
+// LOADER
+window.addEventListener('load',()=>{
+  setTimeout(()=>{
+    document.getElementById('loader').classList.add('hide');
+  },2200);
+});
+
+// PARTICLES
+(function(){
+  const c=document.getElementById('particles');
+  for(let i=0;i<60;i++){
+    const p=document.createElement('div');
+    p.className='particle';
+    const size=Math.random()*3+1;
+    p.style.cssText=`
+      width:${size}px;height:${size}px;
+      left:${Math.random()*100}%;
+      bottom:${Math.random()*-20}%;
+      animation-duration:${8+Math.random()*12}s;
+      animation-delay:${Math.random()*10}s;
+    `;
+    c.appendChild(p);
+  }
+})();
+
+// NAVBAR SCROLL & MOBILE MENU
+const navbar = document.getElementById('navbar');
+const backTop = document.getElementById('back-top');
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.querySelector('.nav-links');
+
+window.addEventListener('scroll',()=>{
+  navbar.classList.toggle('scrolled',window.scrollY>50);
+  backTop.classList.toggle('show',window.scrollY>400);
+});
+
+// FIXED: Hamburger functionality
+hamburger.addEventListener('click', () => {
+  navLinks.classList.toggle('mobile-active');
+});
+navLinks.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('mobile-active');
+  });
+});
+
+// FIXED: COUNTDOWN TIMER CALCULATION
+function updateCountdown(){
+  const launchDate=new Date('2026-05-25T00:00:00').getTime();
+  const now=new Date().getTime();
+  const diff=launchDate-now;
+  
+  if(diff>0){
+    const days=Math.floor(diff/(1000*60*60*24));
+    const hours=Math.floor((diff%(1000*60*60*24))/(1000*60*60));
+    const minutes=Math.floor((diff%(1000*60*60))/(1000*60));
+    
+    // This is the line that was fixed!
+    const seconds=Math.floor((diff % (1000 * 60)) / 1000);
+    
+    document.getElementById('days').textContent=String(days).padStart(2,'0');
+    document.getElementById('hours').textContent=String(hours).padStart(2,'0');
+    document.getElementById('minutes').textContent=String(minutes).padStart(2,'0');
+    document.getElementById('seconds').textContent=String(seconds).padStart(2,'0');
+  }
+}
+updateCountdown();
+setInterval(updateCountdown,1000);
+
+// FORM SUBMISSION
+document.getElementById('prebook-form').addEventListener('submit',(e)=>{
+  e.preventDefault();
+  
+  const form=document.getElementById('prebook-form');
+  const success=document.getElementById('form-success');
+  
+  form.style.display='none';
+  success.classList.add('show');
+  
+  setTimeout(()=>{
+    form.reset();
+    form.style.display='block';
+    success.classList.remove('show');
+  },5000);
+});
+
+// TABS
+document.querySelectorAll('.tab-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+    document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('tab-'+btn.dataset.tab).classList.add('active');
+  });
+});
+
+// FAQ ACCORDION
+document.querySelectorAll('.faq-item').forEach(item=>{
+  item.querySelector('.faq-q').addEventListener('click',()=>{
+    const open=item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+    if(!open)item.classList.add('open');
+  });
+});
+
+// SCROLL REVEAL
+const revealObs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');}});
+},{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(el=>revealObs.observe(el));
+
+  document.getElementById('prebook-form').addEventListener('submit', function(event) {
+    // 1. Prevent the form from refreshing the page
+    event.preventDefault();
+
+    // 2. Grab all the values from your specific input fields
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const phone = document.getElementById('phone').value;
+    const state = document.getElementById('state').value;
+
+    // 3. Define your WhatsApp number
+    const phoneNumber = "918074402666";
+
+    // 4. Format the message with emojis for a clean look in WhatsApp
+    const message = `Hello! I want to confirm my early access.\n\n*My Details:*\n👤 *Name:* ${name}\n✉️ *Email:* ${email}\n📞 *Phone:* ${phone}\n📍 *State:* ${state}`;
+
+    // 5. Encode the message so it works in a URL link
+    const encodedMessage = encodeURIComponent(message);
+
+    // 6. Build the final WhatsApp link
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+    // 7. Open WhatsApp in a new tab
+    window.open(whatsappUrl, '_blank');
+
+    // 8. Show your built-in success message and hide the form
+    document.getElementById('prebook-form').style.display = 'none';
+    
+    // Ensure the success message is styled correctly in your CSS to appear when 'display: block' is applied.
+    document.getElementById('form-success').style.display = 'block'; 
+  });
+
+</script>
+</body>
+</html>
