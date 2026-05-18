@@ -69,7 +69,7 @@
     }
 
     *{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth;overflow-x:hidden}
+    html{scroll-behavior:smooth;} /* Fix: Removed overflow-x:hidden from html to fix ScrollTrigger visibility bugs */
     body{
       min-height:100vh;
       font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
@@ -79,6 +79,8 @@
         radial-gradient(circle at 86% 0%, rgba(71,215,255,.14), transparent 28%),
         linear-gradient(180deg, var(--bg) 0%, #090f1c 48%, #050811 100%);
       overflow-x:hidden;
+      width:100%;
+      position:relative;
       padding-bottom:var(--bottom-nav);
     }
 
@@ -103,6 +105,7 @@
         linear-gradient(90deg, rgba(255,255,255,.055) 1px, transparent 1px);
       background-size:46px 46px;
       mask-image:linear-gradient(to bottom, rgba(0,0,0,.9), transparent 78%);
+      -webkit-mask-image:linear-gradient(to bottom, rgba(0,0,0,.9), transparent 78%);
     }
 
     .ambient-grid::after{
@@ -1123,6 +1126,7 @@
       box-shadow:0 18px 46px rgba(0,0,0,.16);
       overflow:hidden;
       transform:translateZ(0);
+      cursor:default; /* Updated in media query */
     }
     .card::before{
       content:"";
@@ -1161,6 +1165,7 @@
       color:var(--gold-2);
       font-size:1.12rem;
       box-shadow:0 12px 28px rgba(217,170,72,.08);
+      transition:all .3s ease;
     }
     .card h3,
     .card h4{
@@ -1171,6 +1176,7 @@
       font-size:.92rem;
       line-height:1.24;
       margin-bottom:8px;
+      transition:color .3s ease;
     }
     .card p{
       position:relative;
@@ -1573,18 +1579,83 @@
       font-size:1.35rem
     }
 
-    .js .reveal{opacity:0;transform:translateY(24px)}
-    .reveal{opacity:1;transform:none}
+    /* Fixed visibility issue by transitioning JS dynamically instead of forcing opacity 0 in CSS */
+    .reveal { will-change: transform, opacity; }
 
-    @media(min-width:560px){
-      :root{--container:min(1180px, calc(100% - 42px))}
-      .hero-actions{grid-template-columns:max-content max-content}
-      .slot-row{display:flex;align-items:center;justify-content:space-between}
-      .grid-2,.grid-3,.grid-4{gap:16px}
-      .card{padding:22px}
-      .card h3,.card h4{font-size:1rem}
-      .card p{font-size:.9rem}
-      .float-card{display:block}
+    /* MOBILE APP FEEL RESPONSIVENESS */
+    @media(max-width: 759px) {
+      .grid-2, .grid-3, .grid-4, .hero-stats, .trust-grid {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 10px;
+      }
+      .card, .benefit-card, .step-card {
+        padding: 14px 8px;
+        text-align: center;
+        border-radius: 16px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+      .card .icon, .step-number {
+        width: 36px;
+        height: 36px;
+        margin: 0 auto 8px;
+        font-size: 0.95rem;
+        border-radius: 12px;
+      }
+      .step-number { font-size: 1rem; }
+      .card h3, .card h4 {
+        font-size: 0.72rem;
+        line-height: 1.25;
+        margin-bottom: 0;
+      }
+      /* Extra text hidden by default on mobile for app grid feel */
+      .card p {
+        display: none;
+        font-size: 0.78rem;
+        margin-top: 10px;
+        line-height: 1.5;
+        color: var(--text-2);
+        padding-top: 10px;
+        border-top: 1px solid rgba(255,255,255,0.06);
+      }
+      /* Click to expand behavior */
+      .card.expanded {
+        grid-column: span 3;
+        background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
+        border-color: var(--line);
+        box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+      }
+      .card.expanded h3, .card.expanded h4 {
+        font-size: 0.9rem;
+        color: var(--gold-2);
+      }
+      .card.expanded p {
+        display: block;
+        animation: textFadeIn 0.35s ease forwards;
+      }
+      .benefit-value { font-size: 1.4rem; margin: 10px 0 6px; }
+      .tag { padding: .2rem .35rem; font-size: .5rem; top: 8px; right: 8px; }
+      
+      @keyframes textFadeIn {
+        from { opacity: 0; transform: translateY(-5px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      
+      .hero-title { font-size: 2.35rem; }
+      .brand-text span { font-size: .85rem; }
+      .launch-pill { font-size: .64rem; padding: 0 .6rem; }
+      .countdown { grid-template-columns: repeat(4, 1fr) !important; gap: 6px; }
+      .time-card { padding: 8px 4px; border-radius: 12px; }
+      .time-card strong { font-size: 1rem; }
+      .time-card span { font-size: .55rem; }
+    }
+
+    @media(min-width:560px) and (max-width: 759px) {
+      .grid-2, .grid-3, .grid-4 { gap: 14px; }
+      .card { padding: 18px 12px; }
+      .card .icon { width: 42px; height: 42px; font-size: 1.1rem; }
+      .card h3, .card h4 { font-size: .85rem; }
     }
 
     @media(min-width:760px){
@@ -1616,6 +1687,9 @@
       .footer{padding-bottom:30px}
       .footer-grid{grid-template-columns:1.35fr repeat(3,1fr);gap:34px}
       .float-actions{bottom:18px;right:18px}
+      
+      /* Reset cursor for desktop */
+      .card { cursor: default; }
     }
 
     @media(min-width:1080px){
@@ -1630,11 +1704,7 @@
     }
 
     @media(max-width:380px){
-      .brand-text span{font-size:.85rem}
-      .launch-pill{font-size:.64rem;padding:0 .55rem}
-      .hero-title{font-size:2.25rem}
-      .grid-2,.grid-3,.grid-4{grid-template-columns:1fr}
-      .countdown{grid-template-columns:repeat(2, minmax(0,1fr))}
+      .countdown{grid-template-columns:repeat(2, minmax(0,1fr)) !important;}
       .mobile-bottom-nav a{font-size:.56rem}
     }
 
@@ -1646,7 +1716,6 @@
         transition:none!important;
         scroll-behavior:auto!important
       }
-      .js .reveal{opacity:1!important;transform:none!important}
     }
   </style>
 
@@ -2114,6 +2183,9 @@
             { opacity:1, y:0, scale:1, duration:.55, stagger:.06, ease:'power2.out' }
           );
         }
+        
+        // Refresh scroll trigger to account for new heights
+        if(window.ScrollTrigger) ScrollTrigger.refresh();
       });
     });
 
@@ -2122,6 +2194,22 @@
         const wasOpen = item.classList.contains('open');
         $$('.faq-item').forEach(faq => faq.classList.remove('open'));
         if(!wasOpen) item.classList.add('open');
+        setTimeout(() => { if(window.ScrollTrigger) ScrollTrigger.refresh(); }, 300);
+      });
+    });
+    
+    // Feature: Card Click Expand for Mobile
+    $$('.card').forEach(card => {
+      card.addEventListener('click', () => {
+        if(window.innerWidth < 760) {
+          // Close others
+          $$('.card').forEach(c => {
+             if(c !== card) c.classList.remove('expanded');
+          });
+          card.classList.toggle('expanded');
+          // Refresh scrolltrigger because layout changes
+          setTimeout(() => { if(window.ScrollTrigger) ScrollTrigger.refresh(); }, 350);
+        }
       });
     });
 
@@ -2163,7 +2251,9 @@
       if(window.gsap && window.ScrollTrigger){
         gsap.registerPlugin(ScrollTrigger);
 
+        // Define starting point manually to prevent stuck elements
         gsap.set('.reveal', { opacity:0, y:28 });
+        
         gsap.to('.hero .reveal', {
           opacity:1,
           y:0,
@@ -2185,7 +2275,7 @@
             ease:'power3.out',
             scrollTrigger:{
               trigger:section,
-              start:'top 78%',
+              start:'top 85%', // Adjusted for mobile consistency
               once:true
             }
           });
@@ -2219,12 +2309,14 @@
 
         gsap.utils.toArray('.card').forEach(card => {
           card.addEventListener('mousemove', event => {
+            if(window.innerWidth < 760) return; // Disable hover 3D effect on mobile
             const rect = card.getBoundingClientRect();
             const x = (event.clientX - rect.left) / rect.width - .5;
             const y = (event.clientY - rect.top) / rect.height - .5;
             gsap.to(card, { rotateY:x * 5, rotateX:-y * 5, duration:.35, ease:'power2.out' });
           });
           card.addEventListener('mouseleave', () => {
+            if(window.innerWidth < 760) return;
             gsap.to(card, { rotateY:0, rotateX:0, duration:.45, ease:'power2.out' });
           });
         });
@@ -2272,10 +2364,14 @@
       form.style.display = 'none';
       success?.classList.add('show');
 
+      // Refresh ScrollTrigger after form state changes
+      setTimeout(() => { if(window.ScrollTrigger) ScrollTrigger.refresh(); }, 100);
+
       setTimeout(() => {
         form.reset();
         success?.classList.remove('show');
         form.style.display = 'grid';
+        setTimeout(() => { if(window.ScrollTrigger) ScrollTrigger.refresh(); }, 100);
       }, 7000);
     });
 
